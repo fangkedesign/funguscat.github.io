@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* --------------------------------
+Back to top Button
+-------------------------------- */
+.back-to-top {
+  font-size: 2.4rem;
+  color: $red;
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  z-index: 2;
+  transition: all ease .2s;
+  display: none;
+  &:hover {
+    color: $red;
+  }
+}
+
+
+/* --------------------------------
+Breadcrumb
+-------------------------------- */
+
+
+/* --------------------------------
+Pagination
+-------------------------------- */
+.pagination {
+  .page-link {
+    font-family: $font-ctb;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.4rem;
+    margin: auto 0.5rem;
+    line-height: 1.25;
+    color: #51505B;
+    background-color: transparent;
+    border: 0px solid #ddd;
+  }
+  .page-link:hover {
+    color: #56a6c5;
+  }
+  .page-item.active .page-link {
+    color: black;
+    background: transparent;
+    position: relative;
+  }
+}

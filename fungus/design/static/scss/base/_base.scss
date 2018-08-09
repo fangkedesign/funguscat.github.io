@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import "base/responsive";
+/* --------------------------------
+Basic Core
+-------------------------------- */
+*,
+*::before,
+*::after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* --------------------------------
+Responsive Body
+-------------------------------- */
+
+body {
+
+	font-size: 1rem;
+	font-weight: 300;
+	color: #fff;
+	font-family: $font-lato, "Noto Sans Kannada", "微軟正黑體", sans-serif;
+	font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+}
+
+/* --------------------------------
+Typography
+-------------------------------- */
+
+html {
+	font-size: 1rem;
+	// @include MQ(L) {
+	// 	font-size: 1.6rem;
+	// }
+	// @include MQ(M) {
+	// 	font-size: 1.4rem;
+	// }
+	// @include MQ(S) {
+	// 	font-size: 1.2rem;
+	// }
+	@include media-breakpoint-down(sm) {
+		font-size: 0.875rem;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: block;
+	color: #000;
+    font-weight: initial;
+    line-height: 1.5;
+}
+
+
+/* --------------------------------
+Links
+-------------------------------- */
+
+a {
+	color: #000;
+	text-decoration: none;
+	outline: 0;
+	@include transition(all .1s ease-in);
+	&:hover,
+	&:focus {
+		color: #424242;
+		text-decoration: none;
+		outline: none;
+	}
+}

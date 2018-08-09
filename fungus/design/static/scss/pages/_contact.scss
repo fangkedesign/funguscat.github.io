@@ -1,0 +1,62 @@
+/* --------------------------------
+Cotnact
+-------------------------------- */
+main.margin-minus {
+	margin-bottom: -5%;
+}
+.contact-main {
+	padding-top: 10vh;
+	.title {
+		font-family: $font-ctb;
+		font-size: 2.3rem;
+		margin-bottom: 30px;
+		text-align: center;
+		color: #3d3d3d;
+	}
+
+	.caption {
+		font-family: $font-serif;
+		font-size: 1.2rem;
+		margin-bottom: 30px;
+		text-align: center;
+		color: #91969a;
+		margin-bottom: 8%;
+	}
+	.wrapper {
+		display: flex;
+     	justify-content: space-evenly;
+	}
+
+	.block {
+		width: 30%;
+		justify-content: space-between;
+		.social-link {
+			margin-top: 30px;
+			a {
+				margin-right: 18px;
+			}
+			svg {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		padding-top: 0;
+		.wrapper{
+			flex-direction: column;
+		}
+		.block {
+			width: 100%;
+			&.social-block {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+
+.google-maps {
+	height: 45vh;
+	margin-top: 8%;
+ 	margin-bottom: -3%;
+}

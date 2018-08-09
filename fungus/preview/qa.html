@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>萌狗 Mongo</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="favicon/favicon.ico" />
+
+	<!-- Optmization  -->
+	<link rel="stylesheet" href="static/vendor/animsition/css/animsition.css">
+	<!-- Plugins  -->
+	<link rel="stylesheet" href="static/vendor/owlcarousel/owl.carousel.css">
+	<link rel="stylesheet" href="static/vendor/owlcarousel/owl.theme.css">
+	<link rel="stylesheet" href="static/vendor/lightslider/css/lightslider.css">
+	<link rel="stylesheet" href="static/vendor/sliderpro/css/slider-pro.css">
+	<link rel="stylesheet" href="static/vendor/slidebars/slidebars.min.css">
+	<link rel="stylesheet" href="static/vendor/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/settings.min.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/layers.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/navigation.min.css">
+	<!-- Form -->
+	<link rel="stylesheet" href="static/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="static/vendor/webui-popover/jquery.webui-popover.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- Core -->
+	<link rel="stylesheet" href="static/svg/icomoon/style.css">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-54947.js"></script>
+	<!-- Core -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="static/js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script src="static/js/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs>
+			<symbol id="icon-minus" viewBox="0 0 32 32">
+				<title>minus</title>
+				<path d="M25.333 14.667h-18.667c-0.8 0-1.333 0.533-1.333 1.333s0.533 1.333 1.333 1.333h18.667c0.8 0 1.333-0.533 1.333-1.333s-0.533-1.333-1.333-1.333z"></path>
+			</symbol>
+			<symbol id="icon-plus" viewBox="0 0 32 32">
+				<title>plus</title>
+				<path d="M25.312 17.312h-8v8h-2.625v-8h-8v-2.625h8v-8h2.625v8h8v2.625z"></path>
+			</symbol>
+			<symbol id="icon-chevron-down" viewBox="0 0 32 32">
+				<title>chevron-down</title>
+				<path d="M24.933 11.067c-0.533-0.533-1.333-0.533-1.867 0l-7.067 7.067-7.067-7.067c-0.533-0.533-1.333-0.533-1.867 0s-0.533 1.333 0 1.867l8 8c0.267 0.267 0.667 0.4 0.933 0.4s0.667-0.133 0.933-0.4l8-8c0.533-0.533 0.533-1.333 0-1.867z"></path>
+			</symbol>
+			<symbol id="icon-chevron-up" viewBox="0 0 32 32">
+				<title>chevron-up</title>
+				<path d="M24.933 19.067l-8-8c-0.533-0.533-1.333-0.533-1.867 0l-8 8c-0.533 0.533-0.533 1.333 0 1.867s1.333 0.533 1.867 0l7.067-7.067 7.067 7.067c0.267 0.267 0.667 0.4 0.933 0.4s0.667-0.133 0.933-0.4c0.533-0.533 0.533-1.333 0-1.867z"></path>
+			</symbol>
+			<symbol id="icon-keyboard_arrow_left" viewBox="0 0 32 32">
+				<title>keyboard_arrow_left</title>
+				<path d="M20.563 21.437l-1.875 1.875-8-8 8-8 1.875 1.875-6.125 6.125z"></path>
+			</symbol>
+			<symbol id="icon-keyboard_arrow_right" viewBox="0 0 32 32">
+				<title>keyboard_arrow_right</title>
+				<path d="M11.437 21.812l6.125-6.125-6.125-6.125 1.875-1.875 8 8-8 8z"></path>
+			</symbol>
+			<symbol id="icon-calendar" viewBox="0 0 32 32">
+				<title>calendar</title>
+				<path d="M26.927 4.268h-1.637v-1.539c-0.035-0.856-0.737-1.537-1.599-1.537s-1.564 0.681-1.599 1.533v1.539h-12.148v-1.535c-0.035-0.856-0.737-1.537-1.599-1.537s-1.564 0.681-1.599 1.533v1.539h-1.637c-2.797 0-5.072 2-5.072 4.805v16.235c0 2.797 2.275 5.168 5.072 5.168h21.815c2.797 0 5.073-2.369 5.073-5.168v-16.233c0.003-2.797-2.273-4.805-5.069-4.805zM5.111 7.143h1.64v1.168c0.035 0.856 0.737 1.537 1.599 1.537s1.564-0.681 1.599-1.535v-1.171h12.145v1.168c0.035 0.856 0.737 1.537 1.599 1.537s1.564-0.681 1.599-1.535v-1.171h1.637c1.12 0 1.879 0.809 1.879 1.929v2.545h-25.573v-2.545c0-1.12 0.768-1.929 1.877-1.929zM26.925 27.597h-21.815c-1.12 0-1.877-1.172-1.877-2.293v-10.5h25.571v10.5c0 1.123-0.759 2.295-1.875 2.295z"></path>
+			</symbol>
+			<symbol id="icon-arrow2-left" viewBox="0 0 32 32">
+				<title>arrow2-left</title>
+				<path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16v0c0-8.837 7.163-16 16-16v0zM16 0.744c-8.426 0-15.256 6.83-15.256 15.256s6.83 15.256 15.256 15.256c8.426 0 15.256-6.83 15.256-15.256v0c0-8.426-6.83-15.256-15.256-15.256v0z"></path>
+				<path d="M17.176 8.153c0.001 0 0.001 0 0.002 0 0.206 0 0.372 0.167 0.372 0.372 0 0.105-0.044 0.2-0.114 0.268l-0 0-7.207 7.207 7.207 7.207c0.070 0.068 0.114 0.163 0.114 0.268 0 0.206-0.167 0.372-0.372 0.372-0.101 0-0.192-0.040-0.259-0.105l-7.479-7.479c-0.067-0.067-0.108-0.16-0.108-0.262s0.041-0.195 0.108-0.262l7.472-7.472c0.067-0.070 0.16-0.114 0.264-0.115h0z"></path>
+			</symbol>
+			<symbol id="icon-arrow2-right" viewBox="0 0 32 32">
+				<title>arrow2-right</title>
+				<path d="M16 32c-8.837 0-16-7.163-16-16s7.163-16 16-16c8.837 0 16 7.163 16 16v0c0 8.837-7.163 16-16 16v0zM16 31.256c8.426 0 15.256-6.83 15.256-15.256s-6.83-15.256-15.256-15.256c-8.426 0-15.256 6.83-15.256 15.256v0c0 8.426 6.83 15.256 15.256 15.256v0z"></path>
+				<path d="M14.824 23.847c-0.001 0-0.001 0-0.002 0-0.206 0-0.372-0.167-0.372-0.372 0-0.105 0.044-0.2 0.114-0.268l0-0 7.207-7.207-7.207-7.207c-0.070-0.068-0.114-0.163-0.114-0.268 0-0.206 0.167-0.372 0.372-0.372 0.101 0 0.192 0.040 0.259 0.105l7.479 7.479c0.067 0.067 0.108 0.16 0.108 0.262s-0.041 0.195-0.108 0.262l-7.472 7.472c-0.067 0.070-0.16 0.114-0.264 0.115h-0z"></path>
+			</symbol>
+			<symbol id="icon-arrow-left" viewBox="0 0 32 32">
+				<title>arrow-left</title>
+				<path d="M0 16c0-8.837 7.163-16 16-16s16 7.163 16 16c0 8.837-7.163 16-16 16v0c-8.837 0-16-7.163-16-16v0zM0.744 16c0 8.426 6.83 15.256 15.256 15.256s15.256-6.83 15.256-15.256c0-8.426-6.83-15.256-15.256-15.256v0c-8.426 0-15.256 6.83-15.256 15.256v0z"></path>
+				<path d="M6.288 15.963c0.013-0.087 0.055-0.163 0.115-0.219l0-0 6.381-6.396c0.068-0.070 0.163-0.113 0.268-0.113 0.207 0 0.375 0.168 0.375 0.375 0 0.102-0.041 0.195-0.107 0.262l0-0-5.767 5.756h17.779c0.206 0 0.372 0.167 0.372 0.372s-0.167 0.372-0.372 0.372v0h-17.779l5.767 5.753c0.067 0.068 0.109 0.161 0.109 0.264 0 0.207-0.168 0.375-0.375 0.375-0.104 0-0.198-0.042-0.266-0.111l-6.385-6.389c-0.070-0.067-0.114-0.16-0.115-0.264v-0s0-0.022 0-0.034z"></path>
+			</symbol>
+			<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+				<title>arrow-right</title>
+				<path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16v0c8.837 0 16 7.163 16 16v0zM31.256 16c0-8.426-6.83-15.256-15.256-15.256s-15.256 6.83-15.256 15.256c0 8.426 6.83 15.256 15.256 15.256v0c8.426 0 15.256-6.83 15.256-15.256v0z"></path>
+				<path d="M25.712 16.037c-0.013 0.087-0.055 0.163-0.115 0.219l-0 0-6.381 6.396c-0.068 0.070-0.163 0.113-0.268 0.113-0.207 0-0.375-0.168-0.375-0.375 0-0.102 0.041-0.195 0.107-0.262l-0 0 5.767-5.756h-17.779c-0.205 0-0.372-0.167-0.372-0.372s0.167-0.372 0.372-0.372v0h17.779l-5.767-5.753c-0.067-0.068-0.109-0.161-0.109-0.264 0-0.207 0.168-0.375 0.375-0.375 0.104 0 0.198 0.042 0.266 0.111l6.385 6.389c0.071 0.068 0.115 0.163 0.115 0.268v0s0 0.022 0 0.034z"></path>
+			</symbol>
+			<symbol id="icon-more" viewBox="0 0 32 32">
+				<title>more</title>
+				<path d="M32 16c0-8.837-7.163-16-16-16s-16 7.163-16 16c0 8.837 7.163 16 16 16v0c8.837 0 16-7.163 16-16v0zM31.256 16c0 8.426-6.83 15.256-15.256 15.256s-15.256-6.83-15.256-15.256c0-8.426 6.83-15.256 15.256-15.256v0c8.426 0 15.256 6.83 15.256 15.256v0z"></path>
+				<path d="M22.355 10.441c0-0.206-0.167-0.372-0.372-0.372s-0.372 0.167-0.372 0.372v0s0 0 0 0v11.114c0 0.206 0.167 0.372 0.372 0.372s0.372-0.167 0.372-0.372v0s0 0 0 0z"></path>
+				<path d="M16.372 8.588c0-0.206-0.167-0.372-0.372-0.372s-0.372 0.167-0.372 0.372v0s0 0 0 0v14.82c0 0.206 0.167 0.372 0.372 0.372s0.372-0.167 0.372-0.372v0s0 0 0 0z"></path>
+				<path d="M10.389 10.441c0-0.206-0.167-0.372-0.372-0.372s-0.372 0.167-0.372 0.372v0s0 0 0 0v11.114c0 0.206 0.167 0.372 0.372 0.372s0.372-0.167 0.372-0.372v0s0 0 0 0z"></path>
+			</symbol>
+			<symbol id="icon-mail" viewBox="0 0 41 32">
+				<title>mail</title>
+				<path d="M34.748 4.881c-0.473-0.495-1.139-0.802-1.876-0.802-0.013 0-0.025 0-0.037 0l0.002-0h-24.986c-0.011-0-0.025-0-0.038-0-0.742 0-1.412 0.307-1.89 0.802l-0.001 0.001c-0.495 0.473-0.803 1.139-0.803 1.877 0 0.024 0 0.048 0.001 0.073l-0-0.004v18.415c-0 0.015-0 0.034-0 0.052 0 0.729 0.301 1.388 0.785 1.859l0.001 0.001c0.479 0.495 1.149 0.802 1.891 0.802 0.013 0 0.027-0 0.040-0l-0.002 0h25.003c1.495-0.010 2.704-1.219 2.714-2.713v-18.416c0-0.018 0.001-0.040 0.001-0.062 0-0.74-0.308-1.408-0.802-1.883l-0.001-0.001zM33.365 25.259c-0.001 0.146-0.060 0.278-0.154 0.376l0-0c-0.097 0.094-0.229 0.152-0.375 0.154h-24.986c-0.298-0.009-0.537-0.248-0.546-0.545l-0-0.001v-13.022c0.374 0.408 0.775 0.778 1.207 1.11l0.022 0.016q4.54 3.413 7.219 5.734 0.853 0.734 1.417 1.143c0.424 0.304 0.906 0.578 1.417 0.8l0.051 0.020c0.499 0.243 1.083 0.392 1.701 0.409l0.006 0c0.623-0.019 1.207-0.168 1.732-0.421l-0.026 0.011c0.562-0.245 1.044-0.519 1.494-0.837l-0.026 0.017c0.358-0.273 0.836-0.649 1.399-1.143q2.697-2.236 7.236-5.734c0.422-0.351 0.802-0.72 1.151-1.115l0.010-0.011v13.022zM33.365 7.236v0.188c-0.043 0.844-0.331 1.614-0.793 2.248l0.008-0.012c-0.471 0.76-1.038 1.408-1.694 1.952l-0.013 0.011-6.827 5.376-0.597 0.495-0.785 0.631-0.751 0.529c-0.251 0.172-0.537 0.326-0.84 0.45l-0.031 0.011c-0.216 0.094-0.468 0.15-0.733 0.154h-0.001c-0.266-0.007-0.517-0.062-0.747-0.159l0.014 0.005c-0.327-0.135-0.607-0.289-0.868-0.471l0.015 0.010-0.751-0.529-0.785-0.631-0.58-0.427-6.827-5.376c-1.506-1.088-2.475-2.838-2.475-4.815 0-0.017 0-0.034 0-0.051l-0 0.003c0.009-0.298 0.248-0.537 0.545-0.546l0.001-0h24.986c0.033 0.015 0.071 0.024 0.111 0.024s0.078-0.009 0.113-0.024l-0.002 0.001s0.119 0 0.154 0.119c0.005 0.067 0.045 0.124 0.101 0.153l0.001 0c0.014 0.030 0.021 0.065 0.021 0.102s-0.008 0.072-0.022 0.104l0.001-0.002v0.444z"></path>
+			</symbol>
+			<symbol id="icon-shopbag" viewBox="0 0 19 32">
+				<title>shopbag</title>
+				<path d="M18.138 11.344c-0.198-4.915-1.629-10.122-5.165-11.2-0.296-0.097-0.638-0.154-0.992-0.154-0.766 0-1.471 0.263-2.029 0.703l0.007-0.005c-0.637 0.51-1.16 1.132-1.546 1.84l-0.016 0.032c-0.207-0.107-0.452-0.207-0.706-0.286l-0.033-0.009c-0.313-0.104-0.673-0.164-1.047-0.164-0.791 0-1.52 0.269-2.099 0.721l0.008-0.006c-2.006 1.488-3.078 5.024-3.434 7.574-0.324 0.152-0.588 0.386-0.77 0.677l-0.004 0.008c-0.202 0.343-0.321 0.756-0.321 1.196 0 0.029 0.001 0.059 0.002 0.088l-0-0.004v13.699c0.045 1.212 0.822 2.232 1.9 2.633l9.892 3.226c0.164 0.055 0.354 0.086 0.55 0.086 0.005 0 0.009-0 0.014-0h-0.001c0.505-0.010 0.972-0.165 1.363-0.425l-0.009 0.006 3.408-2.355c0.891-0.687 1.474-1.736 1.529-2.923l0-0.009v-13.51c0-0.009 0-0.020 0-0.030 0-0.536-0.188-1.028-0.503-1.414l0.003 0.004zM10.851 1.882c0.306-0.255 0.703-0.409 1.136-0.409 0.199 0 0.39 0.033 0.569 0.093l-0.013-0.004c1.69 0.512 2.653 2.467 3.162 4.016 0.456 1.415 0.773 3.058 0.886 4.756l0.003 0.063-4.16-1.36c-0.557-2.317-1.456-4.349-2.816-5.619 0.31-0.608 0.724-1.119 1.224-1.529l0.008-0.007zM8.973 4.877c0.706 0.871 1.262 1.896 1.608 3.014l0.017 0.064c0.058 0.179 0.112 0.362 0.166 0.55l-2.528-0.826c0.184-1.071 0.438-2.015 0.77-2.921l-0.037 0.115zM5.411 4.013c0.327-0.262 0.747-0.42 1.204-0.42 0.22 0 0.431 0.037 0.627 0.104l-0.014-0.004c0.202 0.064 0.375 0.136 0.539 0.223l-0.017-0.008c-0.426 1.035-0.771 2.246-0.979 3.504l-0.013 0.099c-0.272 0.056-0.511 0.168-0.715 0.323l0.004-0.003c-0.357 0.295-0.633 0.676-0.797 1.111l-0.006 0.018c-0.362 0.886-0.726 1.363-1.686 1.363-0.245-0.008-0.478-0.038-0.703-0.088l0.025 0.005c-0.086-0.016-0.173-0.026-0.256-0.035 0.374-2.205 1.315-5.104 2.784-6.195zM2.458 11.629v-0.032l0.077 0.019s1.555 0.4 2.598-0.32c0.915-0.64 1.562-2.054 1.562-2.054 0.1-0.207 0.308-0.347 0.549-0.347 0.063 0 0.124 0.010 0.182 0.028l-0.004-0.001 3.725 1.235c0.264 1.338 0.43 2.89 0.46 4.476l0 0.026-9.078-3.008zM12.838 29.206c0 0.205-0.166 0.371-0.371 0.371s-0.371-0.166-0.371-0.371v0-10.294c0-0.205 0.166-0.371 0.371-0.371s0.371 0.166 0.371 0.371v0zM15.296 14.672c-0.736 0.509-1.706 0.461-2.211 0.39-0.010-1.55-0.138-3.062-0.374-4.537l0.022 0.169 3.776 1.251c0.056 0.019 0.105 0.044 0.149 0.075l-0.002-0.001q0 0.262 0 0.528c0 0.002-0 0.004-0 0.006 0 0.114 0.026 0.222 0.072 0.319l-0.002-0.004c-0.347 0.716-0.824 1.318-1.405 1.798l-0.009 0.007z"></path>
+			</symbol>
+			<symbol id="icon-facebook" viewBox="0 0 16 32">
+				<title>facebook</title>
+				<path d="M0.51 17.039h3.468v14.426c0 0 0 0.001 0 0.002 0 0.283 0.229 0.512 0.511 0.513h5.881c0.282-0.002 0.51-0.231 0.51-0.513 0-0.001 0-0.001 0-0.002v0-14.359h3.994c0.262-0.001 0.478-0.2 0.506-0.455l0-0.002 0.596-5.31c0.002-0.018 0.004-0.039 0.004-0.061 0-0.283-0.228-0.512-0.51-0.514h-4.59v-3.326c-0.006-0.047-0.009-0.101-0.009-0.155 0-0.76 0.616-1.375 1.375-1.375 0.082 0 0.161 0.007 0.239 0.021l-0.008-0.001h3.003c0.282-0.002 0.51-0.231 0.51-0.513 0-0.001 0-0.002 0-0.003v0-4.876c0-0.001 0-0.002 0-0.003 0-0.282-0.228-0.51-0.51-0.511h-4.138c-0.030 0-0.094 0-0.19 0-1.994 0.009-3.811 0.757-5.194 1.983l0.008-0.007c-1.143 1.018-1.859 2.494-1.859 4.137 0 0.263 0.018 0.521 0.054 0.775l-0.003-0.029v3.893h-3.641c-0.282 0.002-0.51 0.231-0.51 0.513 0 0.001 0 0.002 0 0.003v-0 5.243c0.003 0.277 0.225 0.502 0.501 0.508h0.001z"></path>
+			</symbol>
+			<symbol id="icon-line" viewBox="0 0 33 32">
+				<title>line</title>
+				<path d="M16.707 0.013c-9.216 0-16.714 6.252-16.714 13.936 0 7.504 6.508 13.483 15.14 13.906 0.005 0 0.010 0 0.015 0 0.587 0 1.063-0.476 1.063-1.063 0-0.556-0.427-1.012-0.971-1.059l-0.004-0c-7.48-0.367-13.121-5.436-13.121-11.784 0-6.513 6.546-11.812 14.592-11.812s14.592 5.298 14.592 11.812c0 6.061-7.729 12.642-15.363 16.005-0.377 0.169-0.635 0.54-0.635 0.972 0 0.587 0.475 1.062 1.062 1.062 0.155 0 0.302-0.033 0.434-0.092l-0.007 0.003c4.266-1.903 7.927-4.359 11.096-7.332l-0.021 0.020c3.635-3.507 5.556-7.186 5.556-10.637 0-7.683-7.497-13.936-16.714-13.936zM8.489 10.551c-0.155-0.197-0.393-0.322-0.661-0.322-0.005 0-0.009 0-0.014 0h0.001c-0.004-0-0.008-0-0.012-0-0.269 0-0.508 0.129-0.659 0.328l-0.002 0.002c-0.144 0.21-0.23 0.47-0.23 0.75 0 0.030 0.001 0.061 0.003 0.091l-0-0.004v5.542c-0.003 0.030-0.004 0.066-0.004 0.101 0 0.287 0.093 0.553 0.25 0.768l-0.003-0.004c0.183 0.193 0.441 0.314 0.727 0.314 0.027 0 0.053-0.001 0.079-0.003l-0.003 0h3.009c0.014 0.001 0.030 0.001 0.047 0.001 0.243 0 0.463-0.097 0.623-0.254l-0 0c0.148-0.155 0.238-0.365 0.238-0.597 0-0.012-0-0.025-0.001-0.037l0 0.002c0-0.008 0-0.017 0-0.026 0-0.235-0.092-0.449-0.241-0.607l0 0c-0.157-0.162-0.377-0.262-0.62-0.262-0.017 0-0.033 0-0.049 0.001l0.002-0h-2.24v-4.957c0.001-0.023 0.002-0.050 0.002-0.077 0-0.282-0.090-0.543-0.243-0.757l0.003 0.004zM13.254 10.229c-0.003-0-0.007-0-0.011-0-0.268 0-0.507 0.128-0.657 0.327l-0.002 0.002c-0.146 0.212-0.233 0.474-0.233 0.756 0 0.029 0.001 0.057 0.003 0.086l-0-0.004v5.671c-0.002 0.026-0.003 0.056-0.003 0.086 0 0.283 0.090 0.544 0.242 0.758l-0.003-0.004c0.15 0.202 0.388 0.331 0.655 0.331 0.002 0 0.005 0 0.007-0h-0c0.003 0 0.007 0 0.011 0 0.27 0 0.511-0.128 0.664-0.327l0.001-0.002c0.15-0.213 0.24-0.477 0.24-0.763 0-0.028-0.001-0.056-0.003-0.084l0 0.004v-5.673c0.002-0.024 0.003-0.053 0.003-0.082 0-0.285-0.090-0.549-0.244-0.764l0.003 0.004c-0.155-0.198-0.394-0.324-0.662-0.324-0.003 0-0.005 0-0.008 0h0zM16.914 13.992l1.805 3.243v0.008c0.042 0.071 0.085 0.142 0.126 0.211l0.076 0.126c0.075 0.128 0.159 0.239 0.254 0.34l-0.001-0.001c0.094 0.101 0.208 0.182 0.335 0.239l0.007 0.003c0.119 0.050 0.258 0.080 0.403 0.080 0.004 0 0.008-0 0.012-0h-0.001c0.544-0.003 0.983-0.444 0.983-0.989 0-0.086-0.011-0.17-0.032-0.25l0.002 0.007v-5.661c0.002-0.025 0.003-0.053 0.003-0.082 0-0.265-0.079-0.512-0.215-0.718l0.003 0.005c-0.143-0.196-0.373-0.323-0.632-0.323-0.007 0-0.014 0-0.020 0l0.001-0c-0.004-0-0.009-0-0.014-0-0.257 0-0.485 0.126-0.625 0.32l-0.002 0.002c-0.132 0.202-0.211 0.449-0.211 0.715 0 0.029 0.001 0.057 0.003 0.085l-0-0.004v3.204l-1.846-3.306-0.096-0.176-0.097-0.18c-0.068-0.123-0.14-0.23-0.22-0.329l0.003 0.004c-0.080-0.098-0.178-0.179-0.288-0.239l-0.005-0.002c-0.116-0.061-0.252-0.096-0.398-0.096-0.008 0-0.016 0-0.023 0l0.001-0c-0.216 0-0.415 0.074-0.572 0.199l0.002-0.001c-0.163 0.123-0.288 0.289-0.358 0.481l-0.002 0.007c0 0.001 0 0.002 0 0.004s-0 0.003-0 0.004l0-0c-0.051 0.173-0.081 0.371-0.081 0.576 0 0.025 0 0.049 0.001 0.073l-0-0.004v5.554c-0.001 0.020-0.002 0.043-0.002 0.067 0 0.268 0.079 0.517 0.215 0.726l-0.003-0.005c0.149 0.197 0.383 0.323 0.647 0.323s0.497-0.126 0.645-0.321l0.001-0.002c0.141-0.203 0.224-0.454 0.224-0.725 0-0.025-0.001-0.050-0.002-0.074l0 0.003v-3.129zM26.204 12.040c0.021 0.002 0.046 0.003 0.071 0.003 0.442 0 0.8-0.358 0.8-0.8 0-0.018-0.001-0.035-0.002-0.052l0 0.002c0-0.009 0.001-0.020 0.001-0.030 0-0.221-0.085-0.421-0.225-0.571l0 0.001c-0.153-0.15-0.363-0.243-0.595-0.243-0.018 0-0.036 0.001-0.053 0.002l0.002-0h-3.287c-0.008-0-0.018-0-0.028-0-0.196 0-0.381 0.047-0.545 0.13l0.007-0.003c-0.174 0.095-0.307 0.246-0.377 0.428l-0.002 0.006c-0.064 0.168-0.101 0.363-0.101 0.567 0 0.019 0 0.037 0.001 0.056l-0-0.003v5.41c-0.003 0.031-0.004 0.067-0.004 0.103 0 0.288 0.094 0.553 0.253 0.768l-0.002-0.003c0.181 0.193 0.438 0.313 0.722 0.313 0.027 0 0.054-0.001 0.080-0.003l-0.003 0h3.388c0.013 0.001 0.029 0.001 0.044 0.001 0.238 0 0.452-0.097 0.607-0.254l0-0c0.138-0.153 0.223-0.356 0.223-0.579 0-0.010-0-0.020-0-0.029l0 0.001c0-0.010 0.001-0.021 0.001-0.032 0-0.225-0.084-0.431-0.223-0.587l0.001 0.001c-0.156-0.157-0.372-0.254-0.61-0.254-0.015 0-0.029 0-0.044 0.001l0.002-0h-2.621v-1.483h2.301c0.014 0.001 0.030 0.001 0.046 0.001 0.23 0 0.438-0.095 0.586-0.248l0-0c0.131-0.15 0.212-0.347 0.212-0.564 0-0.009-0-0.018-0-0.027l0 0.001c0.001-0.014 0.001-0.030 0.001-0.047 0-0.434-0.352-0.785-0.785-0.785-0.023 0-0.046 0.001-0.069 0.003l0.003-0h-2.301v-1.202h2.528z"></path>
+			</symbol>
+			<symbol id="icon-toggle" viewBox="0 0 55 32">
+				<title>toggle</title>
+				<path fill="#b5b5b5" style="fill: var(--color1, #b5b5b5)" d="M0 0h55.385v2.462h-55.385v-2.462zM0 14.769h55.385v2.462h-55.385v-2.462zM0 29.538h55.385v2.462h-55.385v-2.462z"></path>
+			</symbol>
+		</defs>
+	</svg>
+
+	<div class="loader-wrap">
+
+	</div>
+	<div class="site-cavas" canvas="container">
+		<header>
+			<!-- 導航選單 -->
+			<nav class="navigator">
+				<ul class="">
+					<li>
+						<a class="animsition-link" href="index.html" data-text="首頁">HOME</a>
+					</li>
+					<li class="active">
+						<a class="animsition-link" href="product_list.html" data-text="產品">PRODUCTS</a>
+						<!-- <ul class="dropdown" aria-label="submenu">
+					<li>
+						<a href="product_list.html">全部</a>
+					</li>
+					<li>
+						<a href="product_list.html">沐浴產品</a>
+					</li>
+					<li>
+						<a href="product_list.html">清潔產品</a>
+					</li>
+					<li>
+						<a href="product_list.html">物飾品/其他</a>
+					</li>
+				</ul> -->
+					</li>
+					<li>
+						<a class="animsition-link" href="about.html" data-text="關於萌狗">ABOUT</a>
+					</li>
+					<li>
+						<a class="animsition-link" href="concept.html" data-text="概念">CONCEPT</a>
+					</li>
+					<li>
+						<a class="animsition-link" href="contact.html" data-text="聯絡我們">CONTACT</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/mongoway" target="_blank" data-text="最新消息">NEWS</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- Logo -->
+			<div class="logo-wrap">
+				<div class="logo">
+					<a href="index.html">
+						<img src="static/images/logo/logo.svg" alt="萌狗">
+					</a>
+				</div>
+			</div>
+			<!-- 右側操作列 -->
+			<div class="right-controls">
+				<!-- 功能選單列 -->
+				<ul class="member-controls">
+					<li class="xs-hide">
+						<a href="member_login.html">登入</a>
+					</li>
+					<li class="xs-hide">
+						<a href="member_register.html">註冊</a>
+					</li class="xs-hide">
+					<!-- 
+			<li class="xs-hide">
+				<a href="member_index.html">會員中心</a>
+			</li>  -->
+					<li class="cart" data-hover-el="mini-cart">
+						<a href="order_cart.html">
+							<svg class="icon icon-shopbag">
+								<use xlink:href="#icon-shopbag"></use>
+							</svg>
+							<span>(1)</span>
+						</a>
+						<div class="mini-cart animated">
+							<div class="mini-cart-list-wrap">
+								<ul class="mini-cart-list">
+									<li class="row">
+										<div class="image col-3 col-md-2">
+											<a href="product_detail.html">
+												<img src="static/images/product/mongo_02_500ml.png" alt="" />
+											</a>
+										</div>
+										<div class="content no-gutters col flex-column align-items-start">
+											<div class="no-gutters col-12 mb-auto col-md-auto  w-100 justify-content-between row">
+												<div class="col-md-12 col-12">
+													<a href="product_detail.html.html ">
+														<h6 class="title">MONGO萌狗 寵物犬專用沐浴精 01</h6>
+													</a>
+													<div class="spec">500ml</div>
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													x 2
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													<div class="price">
+														NT$ 690
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="remove"><a href="">移除</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="image col-3 col-md-2">
+											<a href="product_detail.html">
+												<img src="static/images/product/mongo_02_500ml.png" alt="" />
+											</a>
+										</div>
+										<div class="content no-gutters col flex-column align-items-start">
+											<div class="no-gutters col-12 mb-auto col-md-auto  w-100 justify-content-between row">
+												<div class="col-md-12 col-12">
+													<a href="product_detail.html.html ">
+														<h6 class="title">MONGO萌狗 寵物犬專用沐浴精 01</h6>
+													</a>
+													<div class="spec">500ml</div>
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													x 2
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													<div class="price">
+														NT$ 690
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="remove"><a href="">移除</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="image col-3 col-md-2">
+											<a href="product_detail.html">
+												<img src="static/images/product/mongo_02_500ml.png" alt="" />
+											</a>
+										</div>
+										<div class="content no-gutters col flex-column align-items-start">
+											<div class="no-gutters col-12 mb-auto col-md-auto  w-100 justify-content-between row">
+												<div class="col-md-12 col-12">
+													<a href="product_detail.html.html ">
+														<h6 class="title">MONGO萌狗 寵物犬專用沐浴精 01</h6>
+													</a>
+													<div class="spec">500ml</div>
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													x 2
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													<div class="price">
+														NT$ 690
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="remove"><a href="">移除</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="image col-3 col-md-2">
+											<a href="product_detail.html">
+												<img src="static/images/product/mongo_02_500ml.png" alt="" />
+											</a>
+										</div>
+										<div class="content no-gutters col flex-column align-items-start">
+											<div class="no-gutters col-12 mb-auto col-md-auto  w-100 justify-content-between row">
+												<div class="col-md-12 col-12">
+													<a href="product_detail.html.html ">
+														<h6 class="title">MONGO萌狗 寵物犬專用沐浴精 01</h6>
+													</a>
+													<div class="spec">500ml</div>
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													x 2
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													<div class="price">
+														NT$ 690
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="remove"><a href="">移除</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="row">
+										<div class="image col-3 col-md-2">
+											<a href="product_detail.html">
+												<img src="static/images/product/mongo_02_500ml.png" alt="" />
+											</a>
+										</div>
+										<div class="content no-gutters col flex-column align-items-start">
+											<div class="no-gutters col-12 mb-auto col-md-auto  w-100 justify-content-between row">
+												<div class="col-md-12 col-12">
+													<a href="product_detail.html.html ">
+														<h6 class="title">MONGO萌狗 寵物犬專用沐浴精 01</h6>
+													</a>
+													<div class="spec">500ml</div>
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													x 2
+												</div>
+												<div class="col-md-6 col-12 align-self-center">
+													<div class="price">
+														NT$ 690
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="remove "><a href="">移除</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="cart-total-summary d-flex justify-content-end">
+									<div class="col-6">
+										<div class="total-item row justify-content-between">
+											<span class="left-label">總計</span>
+											<span class="right-price price-total">
+						<b>NT$ 1,380</b></span>
+										</div>
+									</div>
+								</div>
+								<div class="cart-btn-group text-right mt-2">
+									<a href="order_checkout.html" class="btn-checkout btn btn-block btn-md btn-grey btn-round">前往結帳 <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg></a>
+									<a href="order_cart.html" class="btn btn-block btn-round">查看我的購物車</a>
+								</div>
+							</div>
+						</div>
+
+					</li>
+					<li class="toggle">
+						<!-- hamburger menu -->
+						<div class="mobile-menu-toggle">
+							<div id="mobileMenuTrigger" class="hamburger-icon" sidebarjs-toggle="leftSidebar">
+								<svg class="icon icon-toggle">
+									<use xlink:href="#icon-toggle"></use>
+								</svg>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<main class="animsition">
+			<div class="container">
+				<div class="qa col-12 col-md-8 offset-md-2">
+					<div class="title">
+						<h2 class="font-ctb">問與答</h2>
+						<p class="mb-4">如有任何問題，請您詳閱下列內容，或前往聯絡我們詢問</p>
+					</div>
+					<div class="content-text">
+						<div id="accordion">
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h5 class="mb-0">
+							<a class="btn qa-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								天氣炎熱時，需要給長毛狗狗剪毛，是否能讓它們感覺到舒適?
+							</a>
+						</h5>
+								</div>
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+									<div class="card-body">
+										研究數據表明，成犬的正常睡眠標準大概是每天10~15小時，除了整晚都在睡覺外還會進行一次上午覺和一次下午覺，成犬每日的睡覺時間不能低於8小時。幼犬睡的比較強悍剛出生時只有10%的時間醒著，當狗寶寶睡眠時可以分泌出生長激素，請保證它們有充足的覺覺喔~
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+							<a class="btn qa-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								狗在選擇食物的時候，更依賴嗅覺，味覺還是視覺?
+							</a>
+						</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+									<div class="card-body">
+										研究數據表明，成犬的正常睡眠標準大概是每天10~15小時，除了整晚都在睡覺外還會進行一次上午覺和一次下午覺，成犬每日的睡覺時間不能低於8小時。幼犬睡的比較強悍剛出生時只有10%的時間醒著，當狗寶寶睡眠時可以分泌出生長激素，請保證它們有充足的覺覺喔~
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree">
+									<h5 class="mb-0">
+							<a class="btn qa-title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								為什麼愛犬的鼻子總是濕碌碌的?
+							</a>
+						</h5>
+								</div>
+								<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+									<div class="card-body">
+										研究數據表明，成犬的正常睡眠標準大概是每天10~15小時，除了整晚都在睡覺外還會進行一次上午覺和一次下午覺，成犬每日的睡覺時間不能低於8小時。幼犬睡的比較強悍剛出生時只有10%的時間醒著，當狗寶寶睡眠時可以分泌出生長激素，請保證它們有充足的覺覺喔~
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="fluid-1" data-paroller-factor="-0.2">
+			<svg id="organic-blob" width="600" height="600" xmlns="http://www.w3.org/2000/svg" filter="url(#goo)" fill="#f1f1f0">
+				<defs>
+					<filter id="goo">
+						<!-- tympanus.net/codrops/creative-gooey-effects -->
+						<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+						<feComposite in="SourceGraphic" in2="goo" operator="atop" />
+					</filter>
+				</defs>
+				<g>
+					<circle r="100" cy="145" cx="150">
+						<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 205 10" to="260 145 120" dur="34s" repeatCount="indefinite" />
+					</circle>
+					<circle r="100" cy="185" cx="170">
+						<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 205 150" to="0 155 150" dur="42s" repeatCount="indefinite" />
+					</circle>
+					<circle r="100" cy="170" cx="145">
+						<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 300 145" to="200 150 145" dur="30s" repeatCount="indefinite" />
+					</circle>
+					<circle r="100" cy="160" cx="165">
+						<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 300 155" to="0 150 155" dur="34s" repeatCount="indefinite" />
+					</circle>
+				</g>
+			</svg>
+		</div>
+		<div class="fluid-2" data-paroller-factor="0.2">
+			<img src="static/images/index/fluid_right.png" alt="" />
+		</div>
+		<div class="fluid-3" data-paroller-factor="0.1">
+
+			<div id="morphing">
+
+
+				<svg width="530" height="530" viewBox="0 0 362 320">
+					<defs>
+						<style>
+							.a{fill:#f1f1f0;}
+						</style>
+					</defs>
+					<path class="a" d="m 328.96517,114.24516 c -2.65873,-3.87568 -8.45604,-12.69762 -16.9335,-19.581077 C 303.55421,87.780623 292.39805,82.836546 280.10223,79.822498 267.8064,76.80845 254.69037,75.750596 240.53487,66.725896 226.37936,57.701196 211.34506,40.723373 199.58896,28.257057 187.83286,15.790741 179.35599,7.8370926 160.80132,12.884995 142.24665,17.932897 113.61804,35.981062 94.744624,45.0057 75.87121,54.030338 66.754362,54.030338 57.477256,54.259777 48.20015,54.489216 38.763862,54.948069 27.327179,64.049609 15.890496,73.151149 2.4557199,90.893573 2.695781,112.38455 c 0.2400612,21.49097 14.155386,46.72936 24.417175,64.2038 10.261789,17.47445 16.769076,27.0367 33.962457,50.66785 17.193381,23.63115 45.025457,61.26123 78.213797,71.43282 33.18833,10.1716 71.73574,-7.11304 107.00361,-25.54458 35.26787,-18.43154 67.25713,-38.01042 80.78368,-64.32071 13.52654,-26.31029 8.54586,-59.65221 6.30671,-75.71291 -2.23915,-16.06069 -1.75932,-14.98998 -4.41804,-18.86566 z"
+					/>
+				</svg>
+			</div>
+		</div>
+		<a href="#" class="back-to-top">
+			<svg class="icon icon-backtotop">
+				<use xlink:href="#icon-backtotop"></use>
+			</svg>
+		</a>
+		<!--Footer-->
+		<footer>
+			<div class="footer-wave">
+				<img src="static/images/svg/footer_wave.svg" alt="" />
+			</div>
+			<div class="footer-content">
+				<div class="wrap">
+					<div class="block col-md-auto">
+						<h6 class="title">萌狗</h6>
+						<ul class="list">
+							<li>
+								<a href="about.html">ABOUT</a>
+							</li>
+							<li>
+								<a href="">CONCEPT</a>
+							</li>
+							<li>
+								<a href="contact.html">CONTACT</a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/mongoway/" target="_blank">NEWS</a>
+							</li>
+						</ul>
+					</div>
+					<div class="block col-md-auto">
+						<h6 class="title">產品</h6>
+						<ul class="list">
+							<li>
+								<a href="">沐浴精</a>
+							</li>
+							<li>
+								<a href="">環境清潔</a>
+							</li>
+						</ul>
+					</div>
+					<div class="block col-md-auto">
+						<h6 class="title">聯絡我們</h6>
+						<ul class="list">
+							<li>
+								<address>新竹縣芎林鄉文山路303號</address>
+							</li>
+							<li>
+								<a href="tel:+886 35 922 618">+886 35 922 618</a> /
+								<a href="tel:03-5922618">03-5922618</a>
+								<br />週一 ~ 週五 9:00-18:00
+							</li>
+							<li class="social-link">
+								<a href="https://www.facebook.com/mongoway/" target="_blank">
+									<svg class="icon icon-facebook">
+										<use xlink:href="#icon-facebook"></use>
+									</svg>
+								</a>
+								<a href="http://line.me/ti/p/@mongoway" target="_blank">
+									<svg class="icon icon-line">
+										<use xlink:href="#icon-line"></use>
+									</svg>
+								</a>
+								<a href="mailto:service@brickrcorp.com">
+									<svg class="icon icon-mail">
+										<use xlink:href="#icon-mail"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<p class="copyright">© 2018 Brickr All rights reserved |
+					<a href="">隱私權政策</a>
+				</p>
+			</div>
+		</footer>
+		<nav class="mobile-nav-wrap" off-canvas="mobileMenu left overlay" canvas="">
+			<div class="mobilemenu">
+				<div id="mobileMenuClose">
+					<svg class="icon icon-close">
+						<use xlink:href="#icon-close"></use>
+					</svg>
+				</div>
+				<!-- 產品分類 -->
+				<div class="mobilemenu-container">
+					<ul class="mobilemenu-root">
+						<li>
+							<a href="index.html">首頁</a>
+						</li>
+						<li>
+							<a href="product_list.html">產品 <svg class="icon icon-keyboard_arrow_right"><use xlink:href="#icon-keyboard_arrow_right"></use></svg></a>
+							<!-- 第二層分類 -->
+							<ul class="mobilemenu-sub">
+								<a href="#" class="mobilemenu-back">
+									<svg class="icon icon-arrow-left">
+										<use xlink:href="#icon-arrow-left"></use>
+									</svg>回<span>分類</span>
+								</a>
+								<li>
+									<a href="product_list.html">看全部
+							</a>
+								</li>
+								<li>
+									<a href="product_list.html">沐浴產品
+								<svg class="icon icon-keyboard_arrow_right"><use xlink:href="#icon-keyboard_arrow_right"></use></svg>
+							</a>
+									<ul class="mobilemenu-sub">
+										<a href="#" class="mobilemenu-back">
+											<svg class="icon icon-arrow-left">
+												<use xlink:href="#icon-arrow-left"></use>
+											</svg>回<span>分類</span>
+										</a>
+										<li>
+											<a href="product_list.html">香氛沐浴</a>
+										</li>
+										<li>
+											<a href="product_list.html">天然沐浴</a>
+										</li>
+										<li>
+											<a href="product_list.html">抗敏沐浴</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="product_list.html">清潔產品 <svg class="icon icon-keyboard_arrow_right"><use xlink:href="#icon-keyboard_arrow_right"></use></svg></a>
+								</li>
+								<li>
+									<a href="product_list.html">寵物飾品/其他 <svg class="icon icon-keyboard_arrow_right"><use xlink:href="#icon-keyboard_arrow_right"></use></svg></a>
+								</li>
+							</ul>
+						</li>
+						<!-- 		
+				<li>
+					<a href="concept.html">健康管理概念</a>
+				</li>  -->
+
+						<li>
+							<a href="about.html">關於我們</a>
+						</li>
+						<li>
+							<a href="contact.html">聯絡我們</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/mongoway" target="_blank">最新消息</a>
+						</li>
+						<li class="member-controls"><a href="member_login.html">會員登入</a>
+						</li>
+						<!-- <li class="member-controls"><a href="memeber_center.html">會員中心</a></li> -->
+						<li class="member-controls"><a href="member_register.html">註冊</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 頁尾 -->
+				<div class="footer">
+					<div class="menu-footer-inner">
+						<div class="social-links">
+							<a href="https://www.facebook.com/mongoway/" target="_blank">
+								<svg class="icon icon-facebook">
+									<use xlink:href="#icon-facebook"></use>
+								</svg>
+							</a>
+							<a href="http://line.me/ti/p/@mongoway" target="_blank">
+								<svg class="icon icon-line">
+									<use xlink:href="#icon-line"></use>
+								</svg>
+							</a>
+							<a href="mailto:service@brickrcorp.com">
+								<svg class="icon icon-mail">
+									<use xlink:href="#icon-mail"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+
+	<!-- Jquery Plugins  -->
+	<script src="static/js/vendor.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+	<!-- Customized Script -->
+	<script src="static/js/main.js"></script>
+	<script>
+	</script>
+</body>
+
+</html>

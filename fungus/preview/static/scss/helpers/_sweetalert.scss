@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* --------------------------------
+Nice Select
+-------------------------------- */
+.swal-overlay {
+  background-color: rgba(204, 204, 204, 0.45);
+}
+
+.swal-button.swal-button--confirm {
+	background: $red;
+}
+
+.swal-title {
+    font-size: 1.5rem;
+}

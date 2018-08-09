@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/clock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18,6 C11.38208,6 6,11.3820751 6,18.000002 C6,24.6178809 11.38208,30 18,30 C24.61792,30 30,24.6178809 30,18.000002 C30,11.3820751 24.61792,6 18,6 Z M18,7.59999973 C23.75324,7.59999973 28.4,12.246795 28.4,18.000002 C28.4,23.753161 23.7532,28.4000003 18,28.4000003 C12.2468,28.4000003 7.6,23.753161 7.6,18.000002 C7.6,12.246795 12.24676,7.59999973 18,7.59999973 Z M18,9.99999933 C17.55816,9.99999933 17.2,10.3581593 17.2,10.7999952 L17.2,18.000002 C17.2,18.4418419 17.55816,18.8000019 18,18.8000019 L24.4,18.8000019 C24.84184,18.8000019 25.2,18.4418419 25.2,18.000002 C25.2,17.5581621 24.84184,17.2000021 24.4,17.2000021 L18.8,17.2000021 L18.8,10.7999952 C18.8,10.3581593 18.44184,9.99999933 18,9.99999933 Z" id="path-1"></path>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/clock">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="iconswatch/red" mask="url(#mask-2)" fill="#E62828">
+                <rect id="Rectangle" x="0" y="0" width="36" height="36"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

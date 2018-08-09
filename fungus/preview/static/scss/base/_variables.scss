@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+// Animation
+$animation-cubic: all .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+
+// Layout Layer
+$z-index-header: 3;
+$z-index-footer: 3;
+$z-index-main: 2;
+$z-index-fluid: 1;
+
+// fonts 
+$font-lato: "lato", sans serif;
+$font-ctb: chikuming, Georgia, serif;
+$font-serif: serif, Georgia ;
+
+
+// Colors
+$color-1: #000;
+$color-2: #707070;
+$color-3: #ffffff;
+
+
+$red:       #f83f3a; //紅
+$red-h:		#a62b1b; //暗紅
+$red-l:     #E51717; //亮紅
+$green:     #2EB8BD; //湖水綠
+$green-h:   #5aaeb3;  
+$blue:      #4A90E2;
+$blue-b:    #63729E; //深藍
+$dark-w:    #8F92A0;
+$dark:      #434856; //藍灰
+$yellow:    #F5A623; //黃
+$greyblue:  #8F92A0; //灰藍
+
+$white:		#fff; 	 //白
+$white-bg:  #F9F9F9; //背景白
+$black:		#333;    //黑
+$black-h:   #2a2a2a; 
+$grey:		#707070; //灰
+$grey_b:    #484842; //深灰
+$grey-w:	#B1B1B1; //淺灰
+$bor-grey:  #F2F2F5; //線灰
+$bg-grey:	#F9F9F9;
+$bg-pink:   #FFF2F2; //粉紅

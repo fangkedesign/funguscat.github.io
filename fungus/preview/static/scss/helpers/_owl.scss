@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* --------------------------------
+Owl-buttons
+-------------------------------- */
+.owl-carousel {
+	touch-action: none;
+	//去除手機滑動偵測錯誤提醒
+}
+
+.owl-nav {
+	div {
+		opacity: 1;
+		position: absolute;
+		background: transparent;
+		color: #707070;
+		font-size: 38px;
+		svg {
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+			color: #D2D2D2;
+		}
+	}
+	.owl-prev,
+	.owl-next {
+		padding: 0;
+		margin: 10px;
+		width: 30px;
+		height: 40px;
+		cursor: pointer;
+		transform: translate3d(0, 0, 0);
+		position: absolute;
+		top: 50%;
+     	margin-top: -130px;
+	}
+	i {
+		position: absolute;
+		top: 40%;
+	    width: 15px;
+	    height: 1px;
+		border-radius: 2.5px;
+		background: #878787;
+		transition: all 0.15s ease;
+		&:hover {}
+	}
+	.owl-prev {
+		left: -35px;
+		top: calc(50%);
+		@include media-breakpoint-down(sm) {
+			left: 0px;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	.owl-next {
+      	right: -20%;
+		top: calc(50%);
+		@include media-breakpoint-down(sm) {
+			right: 0px;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	.owl-prev i {
+		transform-origin: 0% 50%;
+		left: 0;
+		&:first-child {
+			transform: translate(0, 0px) rotate(40deg);
+		}
+		&:last-child {
+			transform: translate(0, 1px) rotate(-40deg);
+		}
+	}
+	.owl-next i {
+		right: 0;
+		transform-origin: 100% 50%;
+		&:first-child {
+			transform: translate(0, 1px) rotate(40deg);
+		}
+		&:last-child {
+			transform: translate(0, -0px) rotate(-40deg);
+		}
+	}
+}

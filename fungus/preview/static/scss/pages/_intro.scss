@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/*--------------------
+Wrapper
+--------------------*/
+.wrapper {
+	transform-style: preserve-3d;
+	width: 0;
+	z-index: 2;
+	height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	@include MQ(XS) {
+		display: none;
+	}
+}

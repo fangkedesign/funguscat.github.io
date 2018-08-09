@@ -1,0 +1,36 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-mail {
+  width: 1.271484375em;
+}
+
+.icon-shopbag {
+  width: 0.58203125em;
+}
+
+.icon-facebook {
+  width: 0.4990234375em;
+}
+
+.icon-line {
+  width: 1.044921875em;
+}
+
+.icon-toggle {
+  width: 1.73046875em;
+}

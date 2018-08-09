@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/* --------------------------------
+Quantity
+-------------------------------- */
+
+.quantity {
+	max-width: 180px;
+	display: inline-flex;
+	justify-content: space-around; 
+	margin-top: 3rem;
+	font-size: 1.2rem;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	.qty {
+		text-align: center;
+		width: 50%;
+		border: 0;
+		background: transparent;
+	}
+	.minus,
+	.plus {
+		font-size: 2rem;
+		display: inline-block;
+		color: #4c5359;
+		border-radius: 50%;
+	}
+}
+
+//數量 PC 方塊狀
+.quantity.square-quantity {
+	@include media-breakpoint-up(md) {
+		display: inline-flex;
+		justify-content: space-around;
+		padding: 0;
+		border-radius: 0;
+		width: 100%;
+		height: 50px;
+		position: relative;
+		overflow: hidden;
+		text-align: right;
+		margin-top: 0;
+		.qty {
+			left: -8px;
+			width: 80%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			align-content: center;
+			justify-content: start;
+		}
+		.minus,
+		.plus {
+			color: $black-h;
+			position: absolute;
+			height: 50%;
+			font-size: 1.5rem;
+			padding: 2px;
+			border-radius: 0;
+			right: 0;
+			display: flex;
+		}
+		.minus {
+			bottom: 0;
+		}
+		.plus {
+			top: 0;
+		}
+	}
+}
+

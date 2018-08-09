@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* --------------------------------
+Mixin
+-------------------------------- */
+
+@function grid($i) {
+	@return $i * $grid-width+($i - 1) * $gutter-width;
+}
+
+@mixin grid($i) {
+	width: grid($i);
+	margin: $gutter-width $gutter-width *1;
+}
+
+@mixin font( $fontsize: 16px, $fontweight: normal, $color: #1f222b) {
+	font-size: $fontsize;
+	font-weight: $fontweight;
+	color: $color;
+	line-height: 1.5em;
+}
+
+@mixin btn( $fontsize: 30px, $fontweight: normal, $btn_color: $gray, $btnhover_color:$gray) {
+	//background-color: $btn_color;
+	font-size: $fontsize;
+	font-weight: $fontweight;
+	text-align: center;
+	color: $white;
+	padding-right: $gutter*2;
+	padding-left: $gutter*2;
+	background-color: $btn_color;
+	&:hover,
+	&:focus {
+		background-color: $btnhover_color;
+		color: $white;
+	}
+}
+
+@mixin text-ellipsis($line-unit) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $line-unit;
+	-webkit-box-orient: vertical;
+}
+
+@mixin placeholderColor($color) {
+	&:focus {
+		background: transparent;
+		outline: 0 !important;
+		&:-moz-placeholder,
+		&:-ms-input-placeholder,
+		&:-webkit-input-placeholder {
+			color: $color;
+		}
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&[disabled],
+	&[readonly] {
+		background: #f8f8f8;
+		color: rgba(98, 98, 98, 0.23);
+	}
+}
+
+@mixin hideScrollBar() {
+	min-width: 100%;
+	overflow-y: hidden;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	touch-action: pan-x;
+	cursor: move;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@mixin priceWithSalePrice($font-size) {
+	font-size: $font-size;
+	color: #9C9C9C;
+	line-height: 100%;
+	margin-bottom: 20px; //沒有特價
+	&[data-saleprice=''] {
+		text-decoration: none;
+	} //有特價時
+	&[data-saleprice]:not([data-saleprice=""]) {
+		.orig-price {
+			text-decoration: line-through;
+			&::before {
+				content: '$';
+				padding-right: 3px;
+			}
+		}
+		&::after {
+			content: "$" attr(data-saleprice);
+			padding-left: 3px;
+			position: relative;
+			display: inline;
+			color: #DF2626;
+			text-decoration: none;
+		}
+	}
+}

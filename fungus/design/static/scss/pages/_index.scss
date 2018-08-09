@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.index-wrap {
+
+}
+
+.index-title {
+	width: 35%;
+	font-size: 3.2vw;
+	font-family: $font-butler;
+	line-height: 1.2;
+}
+.btn-about {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: rotate(90deg);
+}
+
+.works-list {
+	position: fixed;
+	padding: 0;
+	bottom: 30px;
+	width: 100%;
+	li {
+		list-style: none;
+		display: block;
+		a {
+			display: block;
+			font-family: $font-butler;
+			font-size: 1.4rem;
+			&:hover {
+				text-decoration: line-through;
+			}
+		}
+	}
+}

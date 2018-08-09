@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="37px" viewBox="0 0 60 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>desktop/header</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="22" y="0" width="25" height="25" rx="9"></rect>
+        <filter x="-14.0%" y="-10.0%" width="128.0%" height="128.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.700706845   0 0 0 0 0.700706845   0 0 0 0 0.700706845  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="symbols-desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop/header" transform="translate(-810.000000, 0.000000)">
+            <g id="header">
+                <g id="Group-5" transform="translate(141.000000, 0.000000)"></g>
+                <g id="Group-9" transform="translate(815.000000, 6.000000)">
+                    <g id="Group-2">
+                        <rect id="Rectangle-10" fill="#D3D3D3" x="2" y="3" width="44" height="20" rx="10"></rect>
+                        <g id="Path">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#EE3C3C" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="Off" font-family="PingFangTC-Semibold, PingFang TC" font-size="10" font-weight="500" fill="#FFFFFF">
+                            <tspan x="26.66" y="16">Off</tspan>
+                        </text>
+                        <text id="On" font-family="PingFangTC-Semibold, PingFang TC" font-size="10" font-weight="500" fill="#FFFFFF">
+                            <tspan x="7.22" y="17">On</tspan>
+                        </text>
+                        <text id="上/下班" font-family=".PingFangTC-Regular, .PingFang TC" font-size="13" font-weight="normal" fill="#000000">
+                            <tspan x="1.98353516" y="44">上</tspan>
+                            <tspan x="15.2435352" y="44" font-family=".AppleSystemUIFont">/</tspan>
+                            <tspan x="19.4964648" y="44">下班</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

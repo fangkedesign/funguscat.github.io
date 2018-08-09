@@ -1,0 +1,24 @@
+
+/* --------------------------------
+Checkout
+-------------------------------- */
+
+//checkout step 
+.checkout-steps {
+    margin: 1rem 0;
+    ul {
+        display: flex;
+        padding: 0;
+        list-style: none;
+        li {
+            margin-right: 0.5rem;
+            color: #c1c1c1;
+            font-size: 0.8rem;
+            &.active {
+                color: #4c5359;
+                font-weight: bold;
+            }
+        }
+    }
+}
+

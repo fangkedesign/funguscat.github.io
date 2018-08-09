@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{% block title %}Fungus{% endblock %}</title>
+	<meta name="description" content="{% block description %}{% endblock %}">
+	<meta name="keywords" content="{% block keywords %}{% endblock %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="favicon/favicon.ico" />
+
+	<!-- Optmization  -->
+	<link rel="stylesheet" href="static/vendor/animsition/css/animsition.css">
+	<!-- Plugins  -->
+	<link rel="stylesheet" href="static/vendor/owlcarousel/owl.carousel.css">
+	<link rel="stylesheet" href="static/vendor/owlcarousel/owl.theme.css">
+	<link rel="stylesheet" href="static/vendor/lightslider/css/lightslider.css">
+	<link rel="stylesheet" href="static/vendor/sliderpro/css/slider-pro.css">
+	<link rel="stylesheet" href="static/vendor/slidebars/slidebars.min.css">
+	<link rel="stylesheet" href="static/vendor/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/settings.min.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/layers.css">
+	<link rel="stylesheet" href="static/vendor/revolution/css/navigation.min.css">
+	<!-- Form -->
+	<link rel="stylesheet" href="static/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="static/vendor/webui-popover/jquery.webui-popover.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- Core -->
+	<link rel="stylesheet" href="static/svg/icomoon/style.css">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/style.css">
+	
+	<script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-54947.js"></script>
+	<!-- Core -->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="static/js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script src="static/js/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	{% include 'static/svg/icomoon/symbol-defs.svg' %}
+	
+	<div class="loader-wrap">
+		
+	</div>
+	<div class="site-cavas" canvas="container">
+		{% include '_header.html' %}
+
+		<main class="animsition">
+			{% block body %} {% endblock %}
+		</main>	 
+		{% include '_footer.html' %}
+
+		{% include '_mobile_menu.html' %}
+	</div>
+
+
+	    
+	<!-- Jquery Plugins  -->
+	<script src="static/js/vendor.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+	<!-- Customized Script -->
+	<script src="static/js/main.js"></script>
+		{% block pageScript %}
+		{% endblock %}
+		<script>
+		</script>
+</body>
+
+</html>

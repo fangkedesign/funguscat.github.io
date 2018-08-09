@@ -1,4 +1,0 @@
-{
-    "name": "base",
-    "require": { "corneltek/preview": "dev-master" }
-}

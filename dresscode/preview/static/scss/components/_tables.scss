@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/* --------------------------------
+Table Style
+-------------------------------- */
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.table th,
+.table td {
+  padding: 10px 10px;
+  line-height: 1;
+  vertical-align: middle;
+  @include MQ(S) {
+    font-size: 13px;
+  }
+}
+
+.table thead th,
+.table thead td {
+  text-align: left;
+  padding: 15px 10px;
+  line-height: 18px;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  color: #A2A2A2;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.table tbody th {
+  color: $color-2;
+  font-weight: 100;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #DDDDDD;
+}
+
+.table tfoot tr {
+  border-top: 1px solid #DDDDDD;
+}
+
+.table tbody,
+.table tfoot {
+  tr {
+    td {
+      border-left: 0px solid #DDDDDD;
+      padding: 12px;
+      vertical-align: middle;
+      &:first-child {
+        border-left: 0px solid #DDDDDD;
+        ;
+      }
+    }
+  }
+}
+
+.table thead,
+.table tfoot {
+  tr {
+    th {
+      border-left: 0px solid #DDDDDD;
+      ;
+      &:first-child {
+        border-left: 0px solid #DDDDDD;
+        ;
+      }
+    }
+  }
+}
+
+table {
+  .highlight {
+    color: #6C6C6C;
+  }
+  .order-shipping,
+  .order-total {
+    background: #F7F7F7;
+  }
+  .color {
+    a {
+      display: inline-block;
+      margin-right: 7px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      &:hover {
+        border-color: #BD968F;
+      }
+    }
+  }
+}
+
+.table-order-info {
+  tr>td {
+    border-top: 0 !important;
+  }
+}
+
+
+/* --------------------------------
+Responsive Table
+-------------------------------- */
+
+.table-cart {
+  .product-quantity {
+    height: 50px;
+  }
+  .product-img {
+    width: 80px;
+  }
+  .product-title {
+    font-family: $font-2;
+  }
+}
+
+@include MQ(S) {
+  .table th,
+  .table td {
+    padding: 5px 20px;
+    line-height: 18px;
+    vertical-align: middle;
+    border-top: 1px solid #ebebe9;
+  }
+  .table tbody,
+  .table tfoot {
+    tr {
+      td {
+        padding: 0px;
+      }
+    }
+  }
+  /* Force table to not be like tables anymore */
+  #responsive-table table,
+  #responsive-table thead,
+  #responsive-table tbody,
+  #responsive-table th,
+  #responsive-table td,
+  #responsive-table tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #responsive-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #responsive-table td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 0;
+    position: relative;
+    padding-left: 35%;
+    white-space: normal;
+    text-align: left;
+    min-height: 30px;
+  }
+  #responsive-table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    left: 6px;
+    width: 35%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    color: #9A9A9A;
+  }
+  #responsive-table tr {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E0E0E0;
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  #responsive-table .no-reponsive-td {
+    padding-left: 0;
+  }
+  #responsive-table td:before {
+    content: attr(data-title);
+  }
+  #responsive-table.table-cart {
+    tbody tr td:before {
+      position: relative;
+      left: 0;
+      width: 0;
+      padding-right: 10px;
+    }
+    td.product-title:before,
+    td.product-img:before,
+    td.product-size:before,
+    td.product-quantity:before {
+      display: none;
+    }
+  }
+  #responsive-table tr {
+    position: relative;
+  }
+  #responsive-table td.remove {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    a {
+      padding: 10px;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .table-order-info {
+    td {
+      border-top: 0;
+    }
+  }
+  .table-cart {
+    tbody td {
+      display: block;
+      padding: 0 0 2px 0;
+      text-align: left;
+      width: auto;
+      margin: 0;
+      padding-left: 70px !important;
+    }
+    thead {
+      display: none;
+    }
+    .product-img {
+      width: 60px;
+      float: left;
+      text-align: center !important;
+      padding-left: 0 !important;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+

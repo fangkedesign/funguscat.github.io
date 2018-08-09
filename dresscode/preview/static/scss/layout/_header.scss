@@ -1,0 +1,300 @@
+@charset "utf-8";
+
+/* --------------------------------
+Header and Menu
+-------------------------------- */
+
+// Header 
+header {
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 0px);
+  transition: all ease .2s;
+  padding: 2em 2em 0 2em;
+  height: 50px;
+  &.scroll-hide {
+    transform: (translate(0, -180px) !important);
+  }
+  @include MQ(M) {
+    height: 54px;
+    padding: 1em 1em 0 1em;
+  }
+  .logo {
+    margin: 5px 10px 0 10px;
+    float: left;
+    padding-right: 20px;
+    svg {
+      height: 120px;
+      width: 120px;
+      color: #000;
+      @include MQ(L) {
+        height: 95px;
+        width: 100px;
+      }
+    }
+    @include MQ(M) {
+      display: none;
+    }
+  }
+  svg {
+    color: #000;
+  }
+  nav.nav {
+    ul {
+      li {
+        a {
+          color: #000;
+        }
+      }
+    }
+  }
+  &.white {
+    svg {
+      color: #fff;
+    }
+    nav.nav {
+      ul {
+        li {
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+    span.count {
+      color: #fff
+    }
+    #lines {
+      border-top: 2px solid white;
+      &:before,
+      &:after {
+        border-top: 2px solid white;
+      }
+    }
+  }
+}
+
+.sb-toggle-left {
+  margin: 5px 10px 0 0;
+  color: #FFF;
+  position: relative;
+  z-index: 999;
+  float: left;
+  display: none;
+  cursor: pointer;
+  @include MQ(M) {
+    display: block;
+  }
+}
+
+
+/*----------------------------------------------------
+Nav
+----------------------------------------------------*/
+
+// Menu Navigator
+nav.nav {
+  padding: 0 20px;
+  display: inline-block;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 2em;
+      a {
+        color: #fff;
+      }
+    }
+  }
+  @include MQ(M) {
+    display: none;
+  }
+}
+
+
+/*----------------------------------------------------
+ Search
+----------------------------------------------------*/
+
+#search {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+  svg {
+    pointer-events: none;
+  }
+}
+
+#search.open {
+  opacity: 1;
+  z-index: 9999;
+}
+
+#search input[type="search"] {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  font-size: 60px;
+  font-family: $font-1;
+  font-weight: 300;
+  text-align: center;
+  border: 0px;
+  margin-top: -51px;
+  line-height: 1.5;
+  &:focus {
+    background: transparent;
+    outline: 0 !important;
+    box-shadow: none;
+    &:-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+  &::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 1);
+  }
+  @include MQ(S) {
+    font-size: 24px;
+  }
+}
+
+#search .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 61px;
+  margin-left: -45px;
+}
+
+#search .close {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  opacity: 1;
+  padding: 10px 17px;
+  font-size: 27px;
+}
+
+
+/*----------------------------------------------------
+Search and Inquiry List Btn
+----------------------------------------------------*/
+
+.header-controls {
+  float: right;
+  @include MQ(M) {
+    float: none;
+  }
+}
+
+.btn-search {
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 1em;
+  a {
+    color: #fff;
+  }
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.btn-cart {
+  display: inline-block;
+  font-size: 18px;
+  .sb-toggle-right {
+    svg {
+      vertical-align: middle;
+    }
+    span.count {
+      font-size: 12px;
+    }
+  }
+}
+
+@include MQ(M) {
+  .btn-search {
+    margin: 0 0.3em;
+  }
+  .btn-cart {
+    float: right;
+  }
+  header.scroll-hide {
+    .btn-inquiry {
+      opacity: 0;
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+Search and Inquiry List Btn
+----------------------------------------------------*/
+
+#lang-menu {
+  width: 40px;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: all .3s ease;
+  z-index: 1000;
+  font-size: 12px;
+  a {
+    color: #ddd;
+    padding: 6px 10px;
+  }
+}
+
+.cls-border-lang {
+  border: 0px solid rgba(255, 255, 255, .1) !important;
+}
+
+#lang-menu div {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.cls-borderbottom-lang {
+  border-bottom: 0px solid rgba(255, 255, 255, .1) !important;
+  opacity: .5;
+}
+
+#lang-menu ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+  text-align: center;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+#lang-menu ul li {
+  color: $color-1;
+  transition: all .3s ease;
+  background: rgba(255, 255, 255, .7);
+}
+
+#lang-menu ul li:hover {
+  cursor: pointer;
+  color: $color-1;
+  background: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,285 @@
+{% extends "_base.html" %} {% block body %}
+<script>
+$(window).load(function() {
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('a#link_clothing').trigger('click');
+		}, 0);
+	});
+});
+
+$( "<div class='btn-back'><a href='javascript:history.go(-1)'><svg class='icon icon-keyboard_arrow_left'><use xlink:href='#icon-keyboard_arrow_left'></use></svg></a></div>" ).insertAfter( ".btn-search" );
+
+
+</script>
+<div class="side-breadcrumb">
+	DRESSCODE CLOTHING
+</div>
+
+<div class="prod-detail-wrapper container-fluid ">
+	<div class="prod-detail-content">
+		<div class="prod-detail-main row" style="position: relative;">
+			<div class="prod-image col-md-7 col-sm-7">
+				<div class="slider-pro" id="prod">
+					<!-- 觸發大圖跳出視窗連結 -->
+					<a href="#prodlightbox" class="popup-modal" id="lightboxtrigger"></a>
+
+					<div class="sp-slides ">
+						<div class="sp-slide">
+							<a href="static/images/shop/shop_01.jpg" class="image-link">
+								<img class="sp-image" src="static/images/shop/shop_01.jpg">
+							</a>
+
+							<div class="sp-caption">
+								<a href="#prodlightbox" class="sp-selectable popup-modal" id="lightboxtrigger" data-effect="mfp-zoom-in">
+								</a>
+							</div>
+							<div class="sp-thumbnail">
+								<div class="sp-thumbnail-image-container">
+									<img class="sp-thumbnail-image" src="static/images/shop/shop_01.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="sp-slide">
+							<img class="sp-image" src="static/images/shop/shop_02.jpg">
+							<div class="sp-thumbnail">
+								<div class="sp-thumbnail-image-container">
+									<img class="sp-thumbnail-image" src="static/images/shop/shop_02.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="sp-slide">
+							<img class="sp-image" src="static/images/shop/shop_03.jpg">
+							<div class="sp-thumbnail">
+								<div class="sp-thumbnail-image-container">
+									<img class="sp-thumbnail-image" src="static/images/shop/shop_03.jpg" />
+								</div>
+							</div>
+						</div>
+						<div class="sp-slide">
+							<img class="sp-image" src="static/images/shop/shop_04.jpg">
+							<div class="sp-thumbnail">
+								<div class="sp-thumbnail-image-container">
+									<img class="sp-thumbnail-image" src="static/images/shop/shop_04.jpg" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<form class="lightbox-block mfp-hide" id="prodlightbox">
+				<img src="static/images/shop/shop_01.jpg">
+				<img src="static/images/shop/shop_02.jpg">
+				<img src="static/images/shop/shop_03.jpg">
+				<img src="static/images/shop/shop_04.jpg">
+			</form>
+			<div class="prod-content col-md-5 col-sm-5 sticky">
+				<div class="back">
+					<a href="javascript:history.go(-1)">
+						<svg class="icon icon-arrow-toggle-left"><use xlink:href="#icon-arrow-toggle-left"></use></svg> BACK
+					</a>
+				</div>
+				<h2 class="code">
+					NO.80004202
+				</h2>
+				<h1 class="title">
+				   白短袖襯衫
+				</h1>
+				<h3 class="price" data-saleprice="NT$ 1,200"> 
+					<span class="orig-price">
+						NT$ 1.990 
+					</span>
+				</h3>
+				
+				<span class="helper-red-text">預購優惠價</span>
+				
+				<div class="prod-tab">
+					<ul class="nav nav-tabs" role="tablist" id="tab">
+						<li class="active">
+							<a href="#prodTab1" role="tab" data-toggle="tab">
+								<h3 class="tab-title">Info</h3></a>
+						</li>
+						<li>
+							<a href="#prodTab2" role="tab" data-toggle="tab">
+								<h3 class="tab-title">Size</h3></a>
+						</li>
+					</ul>
+					<div class="tab-content" id="tabContent">
+						<div class="tab-pane fade in active" id="prodTab1">
+							<p>
+								There's nothing quite as cool as a pair of jet-black sneakers, and WANT Les Essentiels de la Vie's 'Lennon' is the pair to own. Crafted from supple leather in a streamlined low-top silhouette.
+							</p>
+						</div>
+						<div class="tab-pane fade" id="prodTab2">
+							<p>
+								There's nothing quite as cool as a pair of jet-black sneakers, and WANT Les Essentiels de la Vie's 'Lennon' is the pair to own. Crafted from supple leather in a streamlined low-top silhouette.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="action">
+					<!--                     <div class="color">
+						<div class="btn-select-group">
+							<a href="shop_detail.html" class="selected">Blue</a>
+							<a href="shop_detail.html">Cream</a>
+						</div>
+					</div> -->
+					<div class="size-color">
+						<div class="row">
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option value="0">SIZE</option>
+									<option value="1">S</option>
+									<option value="1">M</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option value="0">COLOR</option>
+									<option value="1">CREAM</option>
+									<option value="1">BLUE</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="quantity">
+							<a href="#" class="minus">-</a>
+							<input type="text" value="1" class="qty" />
+							<a href="#" class="plus">+</a>
+						</div>
+					</div>
+					<div class="stock">
+						Pre-Order
+						<div class="stock-info">
+						   預購商品進階資訊文案文字
+						</div>
+					</div>
+					<a href="#" class="btn btn-main">ADD TO BAG</a>
+					<a href="">詢問此商品</a>
+					<div class="social-share">
+						SHARE ON
+						<ul class="links">
+							<li>
+								<a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;" target="_blank">
+									<svg class="icon icon-facebook">
+										<use xlink:href="#icon-facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="http://www.tumblr.com/share?v=3&u=&t=&s=" target="_blank" title="Post to Tumblr">
+									<svg class="icon icon-tumblr">
+										<use xlink:href="#icon-tumblr"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" title="Pin it">
+									<svg class="icon icon-pinterest">
+										<use xlink:href="#icon-pinterest"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prod-recommend-wrapper">
+			<div class="prod-recommend">
+				<div class="title">
+					<span>Recommend</span>
+				</div>
+				<div class="recommend-list">
+					<div class="item">
+						<div class="prod-block">
+							<a href="shop_detail.html " title="Product Title">
+								<div class="prod-image">
+									<img src="static/images/shop/shop_thumb01.jpg " alt="Product Title">
+								</div>
+							</a>
+							<h3 class="prod-name">
+								白短袖襯衫
+							</h3>
+							<div class="prod-price">
+								<span class="orig-price">
+									NT$ 2,790
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="prod-block">
+							<a href="shop_detail.html " title="Product Title">
+								<div class="prod-image">
+									<img src="static/images/shop/shop_thumb02.jpg " alt="Product Title">
+								</div>
+							</a>
+							<h3 class="prod-name">
+								白短袖襯衫
+							</h3>
+							<div class="prod-price">
+								<span class="orig-price">
+									NT$ 2,790
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="prod-block">
+							<a href="shop_detail.html " title="Product Title">
+								<div class="prod-image">
+									<img src="static/images/shop/shop_thumb02.jpg " alt="Product Title">
+								</div>
+							</a>
+							<h3 class="prod-name">
+								白短袖襯衫
+							</h3>
+							<div class="prod-price">
+								<span class="orig-price">
+									NT$ 2,790
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="prod-block">
+							<a href="shop_detail.html " title="Product Title">
+								<div class="prod-image">
+									<img src="static/images/shop/shop_thumb03.jpg " alt="Product Title">
+								</div>
+							</a>
+							<h3 class="prod-name">
+								白短袖襯衫
+							</h3>
+							<div class="prod-price">
+								<span class="orig-price">
+									NT$ 2,790
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="prod-block">
+							<a href="shop_detail.html " title="Product Title">
+								<div class="prod-image">
+									<img src="static/images/shop/shop_thumb01.jpg " alt="Product Title">
+								</div>
+							</a>
+							<h3 class="prod-name">
+								白短袖襯衫
+							</h3>
+							<div class="prod-price">
+								<span class="orig-price">
+									NT$ 2,790
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

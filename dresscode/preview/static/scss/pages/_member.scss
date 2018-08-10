@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/* --------------------------------
+Member Style
+-------------------------------- */
+
+.member-wrapper {	
+	padding-bottom: 10%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.member-title {
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	font-size: 24px;
+	font-family: $font-5;
+	letter-spacing: 0.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.member-section-title {
+	text-transform: uppercase;
+	margin-bottom: 50px;
+	font-size: 22px;
+	color: #000;
+	font-family: $font-5;
+	letter-spacing: 0.5em;
+}
+
+.member-white-block {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 10px;
+	box-shadow: 0 1px 1px rgba(130, 130, 130, 0.25);
+	position: relative;
+}
+
+.member-edit-block {
+	margin-bottom: 30px;
+}
+/* --------------------------------
+Member Login
+-------------------------------- */
+
+#login-box {
+	max-width: 400px;
+	margin: 0 auto;
+	form {
+		padding: 15%;
+		position: relative;
+	}
+	.btn {
+		margin-top: 5px;
+		text-transform: uppercase;
+	}
+	.login-footer {
+		text-align: right;
+		a {
+			color: #9b9b9c;
+			font-size: 12px;
+		}
+	}
+}
+
+#password-send-box {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	svg {
+		width: 15em;
+		height: 15em;
+		color: $color-1;
+	}
+}
+
+.login-pull {
+	> a + a:before {
+		padding: 0;
+		padding-right: 5px;
+		content: '|';
+		color: #aaa;
+		font-family: fontello;
+	}
+}
+
+
+/* --------------------------------
+Register 
+-------------------------------- */
+
+#register-form {
+	max-width: 600px;
+	margin: 0 auto;
+	margin-bottom: 5%;
+}
+
+
+/* --------------------------------
+Member Register Complete
+-------------------------------- */
+
+.register-complete {
+	max-width: 500px;
+	margin: 0 auto;
+	margin: 0 auto;
+	svg {
+		width: 15em;
+		height: 15em;
+		color: $color-1;
+	}
+}
+
+.register-complete-text {
+	border-top: 1px solid #D2D2D2;
+	margin-top: 20px;
+	padding-top: 15px;
+	p {
+		margin: 0;
+	}
+}

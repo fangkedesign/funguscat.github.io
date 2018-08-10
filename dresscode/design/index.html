@@ -1,0 +1,124 @@
+{% extends "_base.html" %} {% block body %}
+<script>
+$(document).ready(function() {
+	$('header').addClass('white');
+	$('main').addClass('none-padding');
+});
+</script>
+
+<!-- index popout promote -->
+<!-- <a href="#promote_popput" id="ilightbox" style="display:none"  
+   data-type="inline" 
+   data-options="width: 450, height: 390" 
+   data-text="滿千送百">
+</a> -->
+
+
+<!-- index popout promote bar-->
+<div class="promote-text-bar">
+	<div class="content"> 
+		<span>
+			本週新品 10% off
+		</span>
+		<span class="close">
+			<svg class="icon icon-remove">
+				<use xlink:href="#icon-remove"></use>
+			</svg>
+	    </span>
+	</div>
+</div>
+
+<div id="promote_popput">
+    <a href="#popup" class="trigger" data-effect="mfp-move-from-top"></a>
+    <div id="popup" class="white-popup mfp-with-anim mfp-hide">
+        <a href="index.html"><img src="static/images/popput_img.jpg" alt="" /></a>
+    </div>
+</div>
+
+<div class="side-breadcrumb"> DRESSCODE ISSUE </div>
+<section class="index-banner">
+    <div id="rev_slider_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="youtube-gallery70">
+        <div id="rev_slider" class="rev_slider" data-version="5.0">
+            <ul>
+                <!-- SLIDE  -->
+                <li data-transition="fade">
+                    <!-- MAIN IMAGE -->
+                    <!-- 					
+					<img srcset="static/images/banner/banner_01_mobile.jpg 320w,
+					             static/images/banner/banner_01_tablet.jpg  480w,
+					             static/images/banner/banner_01_desktop.jpg  800w"
+					     sizes="(max-width: 320px) 280px,
+					            (max-width: 480px) 440px,
+					            800px"
+					     src="static/images/banner/banner_01.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina> -->
+                    <img src="static/images/banner/banner_01.jpg" data-src="static/images/banner/banner_01.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption News-Title rs-parallaxlevel-0" data-color="#000000" data-width="['700']" data-x="left" data-hoffset="50" data-y="center" data-voffset="0" data-fontsize="['50','40','20','20']" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-splitin="none" data-splitout="none" data-start="500"> </div>
+                </li>
+                <li data-transition="fade">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/banner/banner_02.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption News-Title rs-parallaxlevel-0" data-color="#000000" data-width="['700']" data-x="left" data-hoffset="50" data-y="center" data-voffset="0" data-fontsize="['50','40','20','20']" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-splitin="none" data-splitout="none" data-start="500"> </div>
+                </li>
+                <li data-transition="fade">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/banner/banner_03.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption News-Title rs-parallaxlevel-0" data-color="#000000" data-width="['700']" data-x="left" data-hoffset="50" data-y="center" data-voffset="0" data-fontsize="['50','40','20','20']" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-splitin="none" data-splitout="none" data-start="500"> </div>
+                </li>
+                <li data-transition="fade">
+                    <!-- MAIN IMAGE -->
+                    <img src="static/images/banner/banner_04.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption News-Title rs-parallaxlevel-0" data-color="#000000" data-width="['700']" data-x="left" data-hoffset="50" data-y="center" data-voffset="0" data-fontsize="['50','40','20','20']" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:-50px;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-splitin="none" data-splitout="none" data-start="500"> </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="index-issue issue-list">
+	<h2 class="section-title"> ISSUE </h2>
+	<div class="container clearfix">
+		<article class="issue-item col-md-6">
+			<a href="issue_detail.html">
+				<div class="inner-box">
+					<div class="date"> OCTOBER 10 </div>
+					<h2 class="title"> GRACE
+						<span>tropica</span>
+					</h2>
+					<div class="btn-view"> VIEW </div>
+				</div>
+				<img src="static/images/index_issue/01.jpg" alt=""> </a>
+		</article>
+		<article class="issue-item col-md-6">
+			<a href="issue_detail.html">
+				<div class="inner-box">
+					<div class="date"> JUNE 10 </div>
+					<h2 class="title"> Street
+						<span>CLASSICS</span>
+					</h2>
+				</div>
+				<img src="static/images/index_issue/02.jpg" alt=""> </a>
+		</article>
+		<article class="issue-item col-md-6">
+			<a href="issue_detail.html">
+				<div class="inner-box">
+					<div class="date"> MARCH 5 </div>
+					<h2 class="title"> ESSENTIALS
+						<span>FESTIVAL</span>
+					</h2>
+				</div>
+				<img src="static/images/index_issue/03.jpg" alt=""> </a>
+		</article>
+		<div class="more-issue">
+			<a href="isuue_list.html">
+				<div class="btn-more-issue">
+					<div>More
+						<br>Issue</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</section> {% endblock %}

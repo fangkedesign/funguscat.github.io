@@ -1,0 +1,99 @@
+{% extends "_base.html" %} {% block body %}
+<div class="member-wrapper">
+	<div id="register-form">
+		<h1 class="member-title text-center">
+				Create your account
+			</h1>
+		<div class="clearfix" role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" id="email">
+				<span class="form-bar"></span>
+				<label for="email" class="float-label">Email</label>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" id="password1">
+				<span class="form-bar"></span>
+				<label for="password1" class="float-label">Password</label>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" id="password2">
+				<span class="form-bar"></span>
+				<label for="password2" class="float-label">Password Confirm</label>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="name" value="">
+				<span class="form-bar"></span>
+				<label for="name" class="float-label">Name</label>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="mobile" value="">
+				<span class="form-bar"></span>
+				<label for="mobile" class="float-label">Phone</label>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-3">
+						<select class="form-control">
+							<option value="0">郵遞區號</option>
+							<option value="1">110</option>
+							<option value="2">120</option>
+							<option value="3" selected="selected">130</option>
+							<option value="4">140</option>
+							<option value="5">150</option>
+							<option value="6">160</option>
+						</select>
+					</div>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="address" value="">
+					</div>
+				</div>
+				<span class="form-bar"></span>
+				<label for="address" class="float-label">Address</label>
+			</div>
+			<div class="form-group">
+				<div id="birthdaypicker" class="input-group input-append">
+					<input data-format="yyyy-MM-dd" type="text" class="form-control" id="birthday"></input>
+					<span class="input-group-addon add-on">
+						<svg class="icon icon-calendar">
+							<use xlink:href="#icon-calendar"></use>
+						</svg>
+					</span>
+				</div>
+				<span class="form-bar"></span>
+				<label for="birthday" class="float-label">Birthday</label>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="col-sm-8 row ">
+							<div class="input-group input-append">
+								<input type="text" class="form-control" id="security_code" placeholder="Enter captcha">
+								<span class="form-bar"></span>
+								<span class="input-group-addon add-on">
+									<button class="btn btn-trans" type="button">
+										<svg class="icon icon-loop">
+											<use xlink:href="#icon-loop"></use>
+										</svg>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class="col-sm-4 row">
+							<img src="static/images/temp_img/captcha.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<a href="member_register_complete.html" class="btn btn-wide btn-main btn-block">Register</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="background-lines">
+	<div class="line line-1" style="height: 100%; visibility: inherit; opacity: 1;"></div>
+	<div class="line line-2" style="height: 100%; visibility: inherit; opacity: 1;"></div>
+	<div class="line line-3" style="height: 100%; visibility: inherit; opacity: 1;"></div>
+	<div class="line line-4" style="height: 100%; visibility: inherit; opacity: 1;"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "_base.html" %} {% block body %}
+<div class="member-content">
+    <div class="container">
+        <div class="cart-list-wrap">
+            <table class="table table-cart" id="responsive-table">
+                <thead>
+                    <tr>
+                        <th>
+                            產品
+                        </th>
+                        <th>
+                            名稱
+                        </th>
+                        <th>
+                            尺寸
+                        </th>
+                        <th>
+                            顏色
+                        </th>
+                        <th>
+                            數量
+                        </th>
+                        <th>
+                            單價
+                        </th>
+                        <th>
+                            小計
+                        </th>
+                        <th>
+                            移除
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="product-img">
+                            <a href="shop_detail.html">
+                                <img src="http://static.zara.net/photos///2016/I/0/1/p/7484/222/307/2/w/1920/7484222307_6_1_1.jpg?ts=1471445942580" />
+                            </a>
+                        </td>
+                        <td class="product-title ">
+                            <a href="shop_detail.html ">
+                                白短袖襯衫
+                            </a>
+                        </td>
+                        <td data-title="尺寸">
+                            S
+                        </td>
+                        <td data-title="顏色">
+                            白紅 
+                        </td>
+                        <td class="product-quantity ">
+                            <div class="quantity ">
+                                <a href="# " class="minus ">-</a>
+                                <input type="text " value="1 " readonly class="qty " />
+                                <a href="# " class="plus ">+</a>
+                            </div>
+                        </td>
+                        <td data-title="單價 ">
+                            $370
+                        </td>
+                        <td data-title="小計 ">
+                            $370
+                        </td>
+                        <td class="remove">
+                            <a href="#">
+                                <svg class="icon icon-remove">
+                                    <use xlink:href="#icon-remove"></use>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product-img">
+                            <img src="http://static.zara.net/photos///2016/I/0/1/p/7484/222/307/2/w/1920/7484222307_6_1_1.jpg?ts=1471445942580 " />
+                        </td>
+                        <td class="product-title">
+                            <a href="shop_detail.html">
+                                白短袖襯衫
+                            </a>
+                            <span class="helper-red">庫存低於訂購量</span>
+                        </td>
+                        <td data-title="尺寸">
+                            S
+                        </td>
+                        <td data-title="顏色">
+                            白紅 
+                        </td>
+                        <td class="product-quantity">
+                            <div class="quantity">
+                                <a href="#" class="minus">-</a>
+                                <input type="text" value="1" readonly class="qty" />
+                                <a href="#" class="plus">+</a>
+                            </div>
+                        </td>
+                        <td data-title="單價">
+                            $370
+                        </td>
+                        <td data-title="小計">
+                            $370
+                        </td>
+                        <td class="remove">
+                            <a href="#">
+                                <svg class="icon icon-remove">
+                                    <use xlink:href="#icon-remove"></use>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product-img">
+                            <img src="http://static.zara.net/photos///2016/I/0/1/p/7484/222/307/2/w/1920/7484222307_6_1_1.jpg?ts=1471445942580 " />
+                        </td>
+                        <td class="product-title">
+                            <a href="shop_detail.html">
+                                白短袖襯衫
+                            </a>
+                            <span class="helper-red">庫存低於訂購量</span>
+                        </td>
+                        <td data-title="尺寸">
+                            S
+                        </td>
+                        <td data-title="顏色">
+                            白紅 
+                        </td>
+                        <td class="product-quantity">
+                            <div class="quantity">
+                                <a href="#" class="minus">-</a>
+                                <input type="text" value="1" readonly class="qty" />
+                                <a href="#" class="plus">+</a>
+                            </div>
+                        </td>
+                        <td data-title="單價">
+                            $370
+                        </td>
+                        <td data-title="小計">
+                            $370
+                        </td>
+                        <td class="remove">
+                            <a href="#">
+                                <svg class="icon icon-remove">
+                                    <use xlink:href="#icon-remove"></use>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-total">
+            <div class="total-item">
+                <span class="left-label">運費</span>
+                <span class="right-price">$0</span>
+            </div>
+            <div class="total-item">
+                <span class="left-label">總計</span>
+                <span class="right-price price-total">$370</span>
+            </div>
+        </div>
+        <div class="text-right">
+            <a href="shop_list.html.html" class="btn btn-wide">繼續購物</a>
+            <a href="order_checkout.html" class="btn btn-main">結帳</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "_base.html" %} {% block body %}
+<div class="member-tab">
+	<div class="container">
+		<ul class="nav nav-tabs" role="tablist" id="tab">
+			<li class="active">
+				<a href="member_index.html">會員帳戶中心</a>
+			</li>
+			<li>
+				<a href="member_order_history.html">歷史訂單</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<div class="member-content">
+		<div class="row">
+			<div class="col-md-7">
+				<h4 class="member-section-title">My Account</h4>
+				<div class="form-group">
+					<input type="text" class="form-control" id="name" value="Jane Doe">
+					<span class="form-bar"></span>
+					<label class="float-label" for="name">Name</label>
+				</div>
+				<div class="form-group">
+					<div class="">
+						janedoe123@hotmail.com
+					</div>
+					<span class="form-bar"></span>
+					<label class="float-label" for="email">Account (Email)</label>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="mobile" value="09xx-xxx-xxx">
+					<span class="form-bar"></span>
+					<label class="float-label" for="mobile">Phone</label>
+				</div>
+				<div class="form-group">
+					<div class="">
+						<div id="birthdaypicker" class="input-group input-append">
+							<input data-format="yyyy-MM-dd" type="text" class="form-control" id="birthday" value="2015-12-09"></input>
+							<span class="input-group-addon add-on">
+									<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+								</span>
+						</div>
+						<script type="text/javascript">
+						$(function() {
+							$('#birthdaypicker').datetimepicker({
+								language: 'zh-TW',
+								pickTime: false
+							});
+						});
+						</script>
+					</div>
+					<span class="form-bar"></span>
+					<label class="float-label" for="birthday">Birthday</label>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-3">
+							<select class="form-control">
+								<option value="0">郵遞區號</option>
+								<option value="1">110</option>
+								<option value="2">120</option>
+								<option value="3" selected="selected">130</option>
+								<option value="4">140</option>
+								<option value="5">150</option>
+								<option value="6">160</option>
+							</select>
+						</div>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="address" value="桃園縣中壢市福壽十一街10號1樓">
+						</div>
+					</div>
+					<span class="form-bar"></span>
+					<label class="float-label" for="address">Address</label>
+				</div>
+				<div class="form-group">
+					<p class="form-control-static navbar-brand">312</p>
+					<span class="form-bar"></span>
+					<label class="float-label" for="address">我的購物金剩餘</label>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<h4 class="member-section-title">Change My Password</h4>
+				<div class="form-group">
+					<input type="password" class="form-control" id="current_password" value="******">
+					<span class="form-bar"></span>
+					<label class="float-label" for="current_password">Old Password</label>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="new_password1">
+					<span class="form-bar"></span>
+					<label class="float-label" for="new_password1">New Password</label>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="new_password2">
+					<span class="form-bar"></span>
+					<label class="float-label" for="new_password2">New Password Confirm</label>
+				</div>
+				<div class="form-group text-right">
+					<a href="#" class="btn btn-wide btn-main">Save My Account</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

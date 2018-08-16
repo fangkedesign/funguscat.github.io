@@ -1,0 +1,93 @@
+/* --------------------------------
+404 Page 
+-------------------------------- */
+
+.error-wrapper {
+	text-align: center;
+	padding: 0 0 3% 0;
+	.error-header {
+		line-height: 100%;
+		.title {
+			font-size: 10em;
+			color: #bfad9e;
+			margin-bottom: 2%;
+			margin-top: -120px;
+			@include media-breakpoint-down(md) {
+				font-size: 8em;
+				margin-top: -50px;
+			}
+		}
+		.subtitle {
+			font-size: 18em;
+			color: #e1e1e1;
+			z-index: -1;
+			margin-bottom: -3%;
+			@include media-breakpoint-down(md) {
+				font-size: 9em;
+			}
+		}
+	}
+	.content {
+		text-align: cneter;
+		.caption {
+			font-size: 16px;
+		}
+		.btn-main {
+			margin: 20px auto;
+			width: 200px;
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+
+/* --------------------------------
+Privacy Polocy
+-------------------------------- */
+
+.privacy-policy {
+	.title {
+		width: 80%;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 5rem;
+	}
+
+	line-height: 200%;
+	ol>li {
+		margin-bottom: 2rem;
+	}
+}
+
+
+
+
+
+
+/* --------------------------------
+Q & A
+-------------------------------- */
+
+.qa {
+	.card {
+		margin-bottom: 1rem;
+	}
+	.card-body {
+		line-height: 1.8;
+
+		padding: 2rem;
+	}
+
+}
+
+.qa-title {
+	font-size: 1rem;
+	text-align: left;
+	font-weight: 400;
+
+	white-space: normal;
+}

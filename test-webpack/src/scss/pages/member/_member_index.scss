@@ -1,0 +1,71 @@
+.member-wrapper {
+
+}
+
+#login-box {
+	width: 100%;
+	max-width: 340px;
+	margin: 0 auto;
+	margin-top: 10vh;
+	.member-title {
+		font-family: $font-ctb;
+		font-size: 2rem;
+		margin-bottom: 4rem;
+		color: #525659;
+		span {
+			font-size: 1rem;
+			display: block;
+			font-family: $font-lato;
+		}
+	}
+	.btn-login {
+		margin: 2rem 0;
+		padding: 1rem;
+	}
+}
+
+
+
+#register-form {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	.member-title {
+		font-family: $font-ctb;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		color: #525659;
+	}
+	.btn-register {
+		margin: 2rem 0;
+		padding: 1rem 4rem;
+	}
+}
+
+#password-send-box{
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	.member-title {
+		font-family: $font-ctb;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		color: #525659;
+	}
+	.btn-send {
+		margin: 2rem 0;
+		padding: 1rem 4rem;
+	}
+}
+
+// 完成註冊頁面
+.complete-block {
+	padding-top: 10vh;
+	text-align: center;
+	.title {
+		font-family: $font-ctb;
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+	
+}

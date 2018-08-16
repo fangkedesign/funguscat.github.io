@@ -17,19 +17,20 @@ const path                = require('path');
 
 // module.exports = config;
 
-
-
 const HtmlWebPackPlugin     = require("html-webpack-plugin");
 const MiniCssExtractPlugin  = require("mini-css-extract-plugin");
-// var CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin     = require("copy-webpack-plugin");
+
+
 module.exports = {
-  entry:  {
-    main:__dirname+"/src/js/main.js",//入口文件
-  },
-  output: {
-      path: __dirname+"/dist/",
-      filename: "js/[name].js",//产出文件，name根据entry的入口文件键名定
-  },
+  // entry:  {
+  //   main:__dirname+"/src/js/main.js",//入口文件
+  //   // vendor: "./src/js/vendor.js" 
+  // },
+  // output: {
+  //     path: __dirname+"/dist/",
+  //     filename: "js/[name].js",//产出文件，name根据entry的入口文件键名定
+  // },
   module: {
     rules: [
       {
@@ -38,6 +39,32 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+       test: /\.css$/,
+       use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // "style-loader",
+          "css-loader","postcss-loader","sass-loader"
+        ]
+      },  
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'static/imges/',
+              publicPath: 'static/imaes/',
+
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -52,40 +79,33 @@ module.exports = {
         test: /\.ejs$/,
         loader: 'ejs-html-loader',			     
       },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      },
-      {
-        test: /\.sass$/,
-        loader: "style-loader!css-loader!postcss-loader!less-loader"     
-      },
     ]
   },
-
   resolve: {
-    extensions: [".js", ".html", ".css", ".txt","less","ejs","json"],
+    // extensions: [".js", ".html", ".css", ".txt","less","ejs","json"],
   },
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
     compress: false,
-    hot: true,
+    hot: true,          //热加载开启 inline: true,//文件改变时会自动刷新页面
+    inline: true,       //文件改变时会自动刷新页面
     port: 8080
   },
+
   plugins: [
     new HtmlWebPackPlugin({
       filename: "index.html",
-      template: "ejs-loader!./src/index.ejs",
-      inject: "body"
+      template: "src/index.html",
+      // template: "ejs-loader!./src/layout.ejs",
+      // inject: "body",
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/main.css",
-      chunkFilename: "style.css"
+     filename: "./scss/[name].css",
+     chunkFilename: "[id].css"
     }),
     // new CopyWebpackPlugin([{
-    //   from: 'runtime/images/*'
+    //   from: './static/*', to: './static'
     // }])
- 
     
   ]
 };

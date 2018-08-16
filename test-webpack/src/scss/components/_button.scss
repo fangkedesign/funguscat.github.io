@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* --------------------------------
+Buttons  /  Default
+-------------------------------- */
+
+.btn {
+  user-select: none;
+  border-radius: 0.4rem;
+  &:focus {
+    outline: 0;
+  }
+  svg {
+    vertical-align: text-bottom;
+  }
+}
+
+/* --------------------------------
+Size Padding
+-------------------------------- */
+.btn-xl {
+  padding: 2rem 2.5rem;
+}
+.btn-lg {
+  padding: 1.5rem 2rem;
+}
+.btn-md {
+  padding: 0.9rem 1.5rem ;
+}
+.btn-sm {
+  
+}
+.btn-xs {
+  
+}
+/* --------------------------------
+Color Fill Button
+-------------------------------- */
+@mixin btn($bg-color, $text-color, $hover-text-color) {
+  color: $text-color;
+  background: $bg-color;
+  transition: all ease-in .2s;
+  border: 2px solid $bg-color;
+  &:hover {
+    color: $hover-text-color;
+    border: 2px solid $bg-color;
+    background: $bg-color;
+  }
+  &.active {
+    color: $hover-text-color;
+    border: 2px solid darken( $bg-color, 5% );
+    background: darken( $bg-color, 5% )
+  }
+}
+
+.btn-red {
+  @include btn($red, #fff, #fff);
+}
+
+.btn-grey {
+  @include btn(#6c757d, #fff, #fff);
+}
+
+.btn-grey-light {
+  @include btn($grey-w, #fff, #fff);
+}
+
+.btn-grey-blue {
+  @include btn($dark, #fff, #fff);
+}
+
+/* --------------------------------
+Round Buttons
+-------------------------------- */
+
+.btn-round {
+  border-radius: 2rem;
+  // padding: 0.4rem 1.2rem;
+  &:hover{}
+}
+
+/* --------------------------------
+Border Radius
+-------------------------------- */
+.radius-none {
+  border-radius: 0.1rem;
+}
+
+.radius-xs {
+  border-radius: 0.1rem;
+}
+
+.radius-sm {
+  border-radius: 0.3rem;
+}
+
+.radius-lg {
+  border-radius: 2rem;
+}
+/* --------------------------------
+outline Buttons
+-------------------------------- */
+@mixin btn-outline($color) {
+  background: #fff;
+  color: $color;
+  border: 2px solid $color;
+  &:hover, &.active {
+    color: $white;
+    background: darken( $color, 5% )
+  }
+}
+.btn-outline-red {   
+  @include btn-outline($red);
+}
+.btn-outline-grey {
+   @include btn-outline($grey);
+}
+.btn-outline-grey-light {
+   @include btn-outline($grey-w);
+}
+// .btn-outline-secondary {
+.btn-outline-white {
+  @include btn-outline(#f5f4f4);
+  border: 2px solid #E5E7EF;
+  color: #696969;
+  background: #FEFEFE;  
+  &:hover, &.active {
+    color: #696969;
+  }
+}
+.btn-outline-thin {
+  border-width: 1px;
+  
+} 

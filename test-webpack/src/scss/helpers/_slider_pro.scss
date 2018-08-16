@@ -1,0 +1,28 @@
+
+/* --------------------------------
+Shop Images for mobile 
+-------------------------------- */
+
+.slider-pro.desktop {
+	.sp-slide {
+		display: block;
+		margin-bottom: 25px;
+		position: relative;
+		img {	
+			width: auto !important;
+			margin: 0 auto;
+			max-width: 100%;
+		}
+	}
+}
+
+.sp-button {
+	width: 9px;
+	height: 9px;
+	border: 0px;
+	background: #ddd;
+}
+
+.sp-selected-button {
+	background-color: #836a56;
+}

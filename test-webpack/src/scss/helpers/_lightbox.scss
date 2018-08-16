@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* --------------------------------
+Lightcase Lightbox 基本設定
+-------------------------------- */
+
+.mfp-bg {
+  background: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+// disable the scrollbar
+.mfp-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.mfp-container {
+  padding: 0;
+}
+
+button.mfp-close {
+  color: #fff;
+  font-size: 40px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+// disable the image shadow in mobile version
+.mfp-figure:after {
+  // disable prod popout shadow for mobile version
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0);
+}
+
+img.mfp-img {
+  padding: 0;
+}
+
+
+/* --------------------------------
+Lightcase Lightbox 動畫
+-------------------------------- */
+
+
+/* overlay at start */
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+
+
+/* overlay animate in */
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+
+/* overlay animate out */
+
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+
+/* content at start */
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+
+/* content animate it */
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+
+/* content animate out */
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+///
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+button.mfp-close {
+  @include media-breakpoint-down(sm) {
+    display: none;    
+  }
+}
+
+/* --------------------------------
+跳出視窗 個別設定
+-------------------------------- */
+
+// 跳窗: 配送進度
+// 所在位置: member_order_list
+div[data-popout="shipingProcess_window"] {
+  max-width: 600px;
+  overflow: auto;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 27px 55px 0 rgba(136, 136, 136, 0.3), 1px 1px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+// 跳窗: 配送及付款方式 
+// 所在位置: product_detail
+div[data-popout="installment_window"] {
+  max-width: 500px;
+  overflow: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 0 auto;
+  box-shadow: 0 27px 55px 0 rgba(136, 136, 136, 0.3), 1px 1px 20px 0 rgba(0, 0, 0, 0.15);
+  @include media-breakpoint-down(sm) {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+}

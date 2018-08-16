@@ -17,19 +17,20 @@ const path                = require('path');
 
 // module.exports = config;
 
-const HtmlWebPackPlugin     = require("html-webpack-plugin");
+const htmlWebpackPlugin     = require("html-webpack-plugin");
 const MiniCssExtractPlugin  = require("mini-css-extract-plugin");
+const CleanWebpackPlugin    = require("clean-webpack-plugin");
 // const CopyWebpackPlugin     = require("copy-webpack-plugin");
 
 
 module.exports = {
   // entry:  {
-  //   main:__dirname+"/src/js/main.js",//入口文件
+  //   main: __dirname+"/src/main.js",//入口文件
   //   // vendor: "./src/js/vendor.js" 
   // },
   // output: {
   //     path: __dirname+"/dist/",
-  //     filename: "js/[name].js",//产出文件，name根据entry的入口文件键名定
+  //     filename: "[name].[contenthash].js",//产出文件，name根据entry的入口文件键名定
   // },
   module: {
     rules: [
@@ -42,13 +43,14 @@ module.exports = {
       },
       {
        test: /\.css$/,
-       use: [MiniCssExtractPlugin.loader, "css-loader"]
+       use: [
+          MiniCssExtractPlugin.loader, "css-loader"
+        ]
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          // "style-loader",
           "css-loader","postcss-loader","sass-loader"
         ]
       },  
@@ -71,7 +73,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }
+            // options: { minimize: false }
           }
         ]
       },
@@ -93,19 +95,29 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebPackPlugin({
+    new htmlWebpackPlugin({
       filename: "index.html",
-      template: "src/index.html",
-      // template: "ejs-loader!./src/layout.ejs",
+      // template: "src/index.html",
+      title: 'Webpack Quick Start',
+      favicon: './favicon.ico',
+      meta: {
+        viewport: "width=device-width, initial-scale=1"
+      },
+      template: "ejs-loader!./src/layout.ejs",
       // inject: "body",
+      minify:{    //html-webpack-plugin内部集成了html-minifier
+        collapseWhitespace:false,    //压缩空格
+        removeAttributeQuotes:false, //移除引号
+        removeComments:false,        //移除注释
+      },
     }),
     new MiniCssExtractPlugin({
-     filename: "./scss/[name].css",
+     filename: "./scss/[name].[contenthash].css",
      chunkFilename: "[id].css"
     }),
     // new CopyWebpackPlugin([{
     //   from: './static/*', to: './static'
     // }])
-    
+    new CleanWebpackPlugin(['dist']),
   ]
 };
